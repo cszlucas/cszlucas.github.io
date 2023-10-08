@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (additionalText.style.display === 'none') {//if text hidded
             additionalText.style.display = 'block'; //show text
             slidingPic.style.display='block';
-            readMoreButton.innerHTML = '<img src="images/More info Button.png" alt="Read Lesser" style="transform: rotate(180deg);">';
+            readMoreButton.innerHTML = '<img src="More info Button.png" alt="Read Lesser" style="transform: rotate(180deg);">';
             } else { //if already shown
             additionalText.style.display = 'none';
             slidingPic.style.display='none';
-            readMoreButton.innerHTML = '<img src="images/More info Button.png" alt="Read Morer">';
+            readMoreButton.innerHTML = '<img src="More info Button.png" alt="Read Morer">';
         }
     });
 });
