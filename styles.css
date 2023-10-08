@@ -1,0 +1,1211 @@
+
+*{ /*sets the website border and font*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', 'Cochin', Arial;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: local("Helvetica"), local("Arial"), url(../fonts/Helvetica-Font.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Cochin";
+    src: local("Cochin"), local("Times New Roman"), url(../fonts/Cochin-Font.woff) format("woff");
+  }
+
+.navbar { /*top bar (color, size, layout, where words are put in box
+    ,size of words classified as part of navbar section, ability to slide) */
+    background: #036080;
+    height:120px;
+    display: flex;
+    position: relative; /*allows bar to remain visible when scrolling sticky*/
+    top:0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 999; /*ensures overlap priority*/
+}
+
+.navbar__container { 
+    display: flex; /*allows me to control spacing of child elements*/
+    justify-content:center; /*aligns the child elements*/
+    height: 80px; /*the latitude of navbar_container not logo*/
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+    /*width: 143.26px;
+    height: 76.65px;
+    flex-shrink: 0;*/
+}
+
+#navbar__logo{
+    color: white;
+    background-size: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items:center; /*controls logos latitude*/
+    /*cursor: pointer; allows cursor over words*/
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navbar__menu{ /*this is the vertical menu displayed when 3 bars clicked on*/
+    display: inline-flex;
+    padding: 25px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 50%;
+    position: absolute; /*places box relative to other items*/
+    right: 5%; /*moves box left some*/
+    list-style: none;
+    
+
+    top: -1000px; /*ensures animation from top never seen until clicked on*/
+    opacity: 1;
+    transition: all 0.5s ease;
+    height: 50vh;
+    z-index: -1; /*ensures we have to click on icon to trigger this animation*/
+}
+.navbar__item{ /*controls words in box spacing*/
+    height: 80px;
+    width: 100%;
+}
+
+.navbar__menu.active{ /*the javascript that triggers this*/
+    background: white;
+    top: 100%;
+    opacity: 1;
+    z-index: 99;
+    height: 60vh; /*the animation menu background*/
+    font-size: 1.6rem;
+    padding-top: 10px;
+}
+
+.navbar__toggle .bar{ /*the hammer bars 3 by 25*/ 
+    width: 85px;
+    height: 4px;
+    margin: 15px 60px;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    margin-bottom: 10px; /*spreads out line height between bars*/
+}
+
+.navbar__links{
+    height: 122px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    display: table;
+    color: #036080;
+    text-decoration: underline;
+    margin-top: 15px;
+    color: #036080;
+    font-family: "Cochin";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#mobile-menu{
+    position:absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+}
+.navbar__toggle .bar{
+    display: block;
+    cursor: pointer;
+}
+
+
+.navbar__links:hover{ /*links except sign up*/
+    /*color:#abbe1a; when hovered over*/
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1060px) { /*picked 960 b/c thats where issues with design started*/
+    .navbar__container{
+        display: flex; /*allows me to control spacing of child elements*/
+        justify-content:center; /*aligns the child elements*/
+        height: 80px; /*the latitude of navbar_container not logo*/
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .navbar__menu{ /*this is the vertical display when 3 bars clicked on*/
+        display: inline-flex;
+        padding: 25px 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 50%;
+        position: absolute;
+        right: 5%; /* Use a percentage value for responsive positioning */
+        list-style: none;
+
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+
+    .navbar__menu.active{ /*the javascript that triggers this, the white square links are on*/
+            background: white;
+            top: 100%;
+            opacity: 1;
+            z-index: 99;
+            height: 60vh;
+            font-size: 1.2rem;
+            padding-top: 10px;
+            flex-direction: inline;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 90%; /* Use a percentage value for responsiveness */
+            max-width: 700px; /* Set a maximum width for larger screens */
+            position: absolute;
+            right: 5%; /* Use a percentage value for responsive positioning */
+            list-style: none;
+            padding-left: 5%; /* Use a percentage value for responsive padding */
+        
+    }
+    
+    #navbar__logo{
+        padding-left: 25px;
+    }
+
+    
+    .navbar__links{
+        height: 122px;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        display: table;
+        color: #036080;
+        text-decoration: underline;
+        margin-top: 15px;
+        color: #036080;
+        font-family: "Cochin";
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    #mobile-menu{
+        position:absolute;
+        top: 20%;
+        right: 0%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__item{
+        width: 100%;
+    }
+
+    .navbar__btn{
+        padding-bottom: 2rem;
+    }
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    .navbar__toggle .bar{ /*the hamburger bars 3 by 25*/ 
+        width: 50px;
+        height: 4px;
+        margin: 0px 60px;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+        margin-bottom: 12px; /*spreads out line height between bars*/
+    }
+}
+
+/* styles.css */
+.main {
+    background-color: #f5f5f5; /* Set a background color for the main section */
+    padding: 0px 0px; /* Add padding to the top/bottom and sides for spacing */
+}
+
+.main__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.main__content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 99;
+    opacity: 100;
+    color: rgb(22, 74, 87);
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+.main__img--container {
+    margin-top: 0px;
+    position: relative;
+}
+
+#main__img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact{
+    background-color: #ffffff;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact__content{ /*hear from you container*/
+    height: 370px;
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    text-align: center;
+    position: relative;
+}
+
+.contact__content h1 { /*love to hear*/
+    font-family: "Helvetica", Arial;
+    /*font-size: 120px;*/
+    font-size: 5.5vw; /*allows responsive*/
+    font-style: normal;
+    font-stretch: ultra-condensed;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    z-index: 99;
+    opacity: 100;
+    color: #036080;
+    white-space: nowrap; /*stop text from wrapping*/
+    max-width: 90%;
+}
+
+.contact__img--container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.contact__img--container img{
+    width: 100%;
+    height: 20%;
+    /*object-fit: cover;*/
+    object-fit: fill;
+    max-height: 90vh
+  }
+
+.after_contact_container{ /*its the Contact Details box*/
+    width: 100%;
+    height: auto; /* Set the desired height 462px */
+    padding: 15px 0;
+    /*border: 1px solid #000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+    background: linear-gradient(180deg, rgba(223, 234, 240, 0.80) 0%, rgba(223, 234, 240, 0.00) 100%);
+}
+
+.after_contact_container h1{ /*says... Contact Details*/
+    color: #036080;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Cochin;
+    /*font-size: 128px;*/
+    font-size: 6vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 110px auto 180px; /*centers text contact details vertically and creates space */
+    /*margin-top: 30vh;154px;
+    margin-bottom: 30vh; 161px;
+    align-items: center;*/
+    text-align: center;
+    white-space: nowrap;
+    max-width: 90%;
+}
+
+.contact_info { /*contact container*/
+    display: flex;
+    flex-direction: column; /*makes it like a list*/
+    align-items: left;
+    text-align: left;
+}
+
+.contact_name{
+    font-size: 4.5vw;/*96px;*/
+    margin: 0 auto; /*moves name down from contact details*/
+    font-family: "Helvetica", Cochin;
+    font-weight: 300;
+    font-style: normal;
+    color: #036080;
+    text-align: center;
+    line-height: normal;
+    max-width: 90%;
+    padding-bottom: 100px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    align-items: center; /*keeps text in line with pic*/
+    margin: 0px 0 2.5vh; /*how separated the rows are*/
+    padding-left: 20vw; /*100px moves logo pics away from left side some*/
+    padding-right: 5%;
+}
+
+.phone_logo, .email_logo, .address_logo{
+    margin-top: 4vh;/*;40px*/
+    margin-right: 2vw; /* Use margin-right to create space between icon and text */
+   /* margin-left: 2vw;50px*/
+   display: flex;
+   align-items: center;
+}
+
+.phone_logo img,
+.email_logo img,
+.address_logo img {
+    max-width: 100%; /* Make the logo images responsive */
+    height:auto;
+}
+
+.phone_number, .email, .address{
+    font-size: 2.5vw;/*75px;*/
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-family: "Helvetica", Cochin;
+    padding: 1vh 1vw; /* 20px makes space between pic and info horizontal;*/
+    display: flex;
+    align-items: center;
+    /*margin-left or top: 2vw; 80px makes space between pic and info*/
+    white-space: nowrap;
+}
+
+.contact .phone_number , .contact .email a, .contact .address  {
+    color: #036080; /* Change to your desired color */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1520px) {
+    .row {
+        padding-left: 20vw;
+    }
+
+    .phone_number,
+    .email,
+    .address {
+        font-size: 3vw;
+        padding: 2vh 2vw;
+    }
+
+    .phone_logo,
+    .email_logo,
+    .address_logo {
+        margin-top: 4vh;
+    }
+
+    .phone_logo img,
+    .email_logo img,
+    .address_logo img {
+        max-width: 70px; /* Adjust size for smaller screens */
+    }
+}
+
+.footer_light_blue_container{
+    margin-top: 120px; /*distance from footer*/
+    background: #DFEAF0;
+    height: 196px;
+}
+
+.light_blue_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+
+
+.hotline_resources{
+    background-color: #ffffff;
+    padding: 0px 0px; /*makes no white space after blue header*/
+}
+
+.Emergency_text_box{
+    position: absolute;
+    z-index: 1;
+    height: 11vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 5vw;
+    width: 100%;
+}
+
+.Emergency_text_box h1{
+   color: #F2AA8D;
+   font-size: 5.5vw; /*90px*/
+   letter-spacing: 2px;
+   font-weight: 500;
+   font-family: "Cochin", Regular;
+}
+
+.hotline_img--container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hotline_img--container img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 100vh
+}
+
+.rows{
+    width: 100%;
+    height: 34vh; /* Set the desired height 450px*/
+    background: linear-gradient(180deg, rgba(223, 234, 240, 0.80) 0%, rgba(223, 234, 240, 0.00) 100%);display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.rect_1,.rect_2,.rect_3,.rect_4,.rect_5,.rect_6,.rect_7,.rect_8,.rect_9,
+.rect_1_num,.rect_2_num,.rect_3_num,.rect_4_num,.rect_5_num,.rect_6_num,.rect_7_num,.rect_8_num,.rect_9_num{
+    color: #036080;
+    font-size: 2.5vw; /*75px*/
+    margin-left: 11vw; /*why the words are centered left*/
+    text-align: left;
+    font-family: "Helvetica", Cochin;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+}
+
+.Emergency_text_box_orange{ /*detox programs*/
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2AA8D;
+}
+
+.Emergency_text_box_orange h1{
+   color: #FFF;
+   font-size: 6vw;
+   font-family: "Cochin", Regular;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}  
+
+
+.row-orange{
+    width: 100%;
+    height: 350px; /* Set the desired height 450px*/
+    background: linear-gradient(180deg, rgba(236, 225, 214, 0.38) 0%, rgba(236, 225, 214, 0.00) 100%);display: flex;
+    flex-direction: column; /*name and under it is number*/
+    justify-content: center;
+}
+
+.rect_10,.rect_11,.rect_12,.rect_13,
+.rect_10_num,.rect_11_num,.rect_12_num,.rect_13_num{
+    color: #000;
+    font-size: 2.5vw;
+    margin-left: 11vw;/*180px*/
+    text-align: left;
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media (max-width: 968px) {
+    .rows {
+        padding-left: 3%;
+        padding-right: 3%;
+        height: 40vh;
+    }
+
+    .rect_1,.rect_2,.rect_3,.rect_4,.rect_5,.rect_6,.rect_7,
+    .rect_1_num,.rect_2_num,.rect_3_num,.rect_4_num,.rect_5_num,.rect_6_num,.rect_7_num,
+    .rect_10,.rect_11,.rect_12,.rect_13,.rect_10_num,.rect_11_num,.rect_12_num,.rect_13_num{
+        font-size: 4.5vw;
+        margin-top: 4vh;
+        max-width: 100%; /* Adjust size for smaller screens */
+        white-space: nowrap;
+        line-height: normal; /* Adjust line-height for vertical centering */
+        margin-left: 10vw;
+        
+    }
+
+    .rect_8,.rect_8_num, .rect_9,.rect_9_num{
+        display: grid;
+        margin-left: 10vw;
+        line-height: normal;
+        margin-top: 4vh;
+        font-size: 4.5vw;
+        max-width: 100%;
+    }
+}
+
+.footer_orange_container{
+    margin-top: 100px; /*distance from footer*/
+    background: #F2AA8D;
+    height: 196px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center
+}
+
+.white_after_logo{
+    height: 100px;
+}
+
+
+
+
+.container_extra_wide{ /*the designers picture*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: -12vw auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.container_extra_wide img{
+    width: 2400px; /*needed special to make picture wide enough 1920*/
+    height: auto; /* Allow the height to adjust proportionally */
+    transform: scaleY(0.9);
+    object-fit: cover;
+    max-width: 100%;
+    margin-bottom: -12.5vw;
+}
+
+.grey_box{ /*grey rows*/
+    background: linear-gradient(180deg, rgba(78, 109, 121, 0.39) 0%, rgba(223, 234, 240, 0.00) 100%);
+    }
+
+.grey{ /*the grey paragraph*/
+    color: #4E6D79;
+}
+
+.check_out_info_container{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-top: 0;
+    
+}
+
+.check_out_info_container h2{ /*checkout*/
+    color: #036080;
+    font-size: 3.5vw;
+    font-style: normal;
+    margin-left: 11vw;
+    font-family: "Helvetica", Arial; 
+    font-weight: 300;
+    line-height: normal;
+    height: 10vh;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .check_out_info_container h2 {
+      margin-bottom: 0px; /* Decrease the margin for smaller screens */
+    }
+  }
+
+.check_out_info_container p{ /* @hamptons text*/
+    color: #036080;
+    font-size: 2vw;
+    font-style: normal;
+    margin-left: 11vw;
+    font-family: "Helvetica", Arial; 
+    font-weight: 300;
+    line-height: normal;
+    height: 10vh;
+   
+}
+
+.arrow {
+    display: flex;
+    position: relative; /* Add positioning to the container relative */
+    left: 55vw;
+    bottom: 4vw; /*100px*/
+    /*left: 850px;
+    bottom: 20px; /*moves arrow down*/
+  }
+
+  .arrow img{
+    width: auto; /* Set your desired width 600px*/
+    height: 12vw; /* Set your desired height 300px*/
+  }
+
+  .qrcode_container {
+    display: flex;
+    position: relative;
+    bottom: 12vw;/*250px*/
+    left: 75%;
+  }
+  
+  .qrcode_container img {
+    width: auto;
+    height: 20vw;
+  }  
+
+  .special2 img { /*the designer pic messed up margins so -12 margin bottom needed*/
+    max-width: 150px; /* Set the desired max width for the image */
+    width: 150px;
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: -12px;
+    }
+
+
+
+    .container_with_gradient {
+        background: url(<path-to-image>), lightgray -0.125px 0px / 100.246% 119.927% no-repeat;
+        background-blend-mode: darken;
+    }
+    
+    .gradient-overlay {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(180deg, #036080 0%, rgba(3, 96, 128, 0.00) 100%);
+        pointer-events: none;
+    }
+    
+    .container_beach {
+        position: relative;
+        max-width: 100%; /* Ensure the image doesn't exceed its container */
+        width: 100%;
+        min-width: 300px; /* Set a minimum width to avoid getting too small on large screens */
+    }
+    
+    .container_beach img {
+        max-width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+    }
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px; /* Adjust as needed */
+        color: #FFF; /* Set the color of the text */
+        text-align: center;
+        margin-top: 180px;
+    }
+    
+    .text-container p { /* paragraph on mental health */
+        font-family: "Helvetica";
+        font-size: 5vw; /* Adjust the font size as needed */
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 6vw;
+        margin-top: 3vw;
+    }
+    
+    .text-container .p2 { /* Matt Haig */
+        font-family: "Helvetica";
+        font-size: 5vw; /* Adjust the font size as needed */
+        font-style: italic;
+        font-weight: 300;
+        line-height: 0%;
+    }
+
+    .services_orange{ /*orange box with nothing in it*/
+        color: #F2AA8D;
+        opacity: .2;
+        height: 128px;
+    }
+
+    .services_offered{
+        background-color: #FFFFFF;
+        height: 350px;
+    }
+
+    .services_offered h1{
+        color: #036080;
+        font-family: "Cochin", Arial;
+        font-size: 13vw; /*150px*/
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .offered_row_list{
+        display: flex;
+        background-color: #DFEAF0;
+        /*justify-content: space-between;*/
+        align-items: center; /*keeps text in line with pic*/
+        padding: 20px 0 50px 100px; /*moves logo pics away from left side some*/
+    }
+
+    .row1,.row2,.row3,.row4,.row5,.row6{
+        color: #036080;
+        font-size: 5.5vw; /*100px*/
+        margin-left: 11vw;
+        text-align: left;
+        font-family: "Helvetica", Cochin;
+        font-weight: 300;
+        line-height: 1.2; /*adjust space between lines*/
+        font-style: normal;
+    }
+
+    @media screen and (max-width:850px) {
+        .row1,.row2,.row3,.row4,.row5,.row6{
+        text-align: center;
+        margin-left: 0vw;
+        }
+    }
+
+    .row1{
+        padding-top: 180px;
+    }
+    .row6{
+        padding-bottom: 250px;
+    }
+    
+
+    .white{
+        background-color: #FFFFFF;
+        margin-top: -100px;
+    }
+
+
+
+
+    .main_page_img img {
+        margin-top: -12vw; /* Crops top of image -12.5 */
+        transform: scaleY(0.8); /* Initial scale */
+    
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            transform: scaleY(1.2); /* Make the image bigger for smaller screens */
+        }
+    
+        /* Media query for even smaller screens */
+        @media screen and (max-width: 480px) {
+            transform: scaleY(1.5); /* Make the image even bigger for even smaller screens */
+        }
+    }
+    
+
+
+    /*.trapezoid_container {
+        position: absolute;
+        top: 130px;
+        right: 350px;
+        width: 100%;
+        padding: 20px; /* Adjust as needed 
+        color: #FFF;  Set the color of the text 
+        text-align: center;
+        display: flex;
+flex-direction: column;
+width: 100%;
+max-width: 100%;
+margin: 0 auto;
+  margin-top: 0px;
+position: relative;
+    }
+
+    .trapezoid_container img {
+        width: 100%; /* Ensure the image covers the container 
+        height: auto;  Ensure the image covers the container 
+        clip-path: polygon(0 0, 54% 0, 100% 100%, 0% 556.233px);
+        margin-top: -12.5vw;
+    }*/
+    .NP{
+        position: absolute;
+        display: flex;
+        margin-top:140px;
+        margin-left: 11vw;
+    }
+
+    
+    @media (max-width: 1300px) {
+        .NP{
+        margin-top:0vh;
+        }
+    }
+    @media (max-width: 800px) {
+        .NP{
+        margin-top:0vh;
+        }
+    }
+
+    .NP h1{ /*NP psych on top of pic*/
+        color: #036080;   
+        font-family: Cochin;
+        font-size: 6vw; /*150px*/
+    }
+    
+    .NP h1 {
+        margin-top: 15vh; /* Adjust the top margin as needed */
+        font-size: 4vw; /* Adjust the font size as needed */
+    }
+
+    .contact_content {
+        text-align: center;
+    }
+    
+    .container_info {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .home_intro h1,
+    .client_name p,
+    .client_des p {
+        font-family: Helvetica;
+        color: #036080;
+        margin-left: 11vw;
+    }
+
+    .home_intro h1{ /*nice to meet you*/
+        font-size: 3vw;
+    }
+    
+    .client_name p {
+        font-size: 3vw;
+    }
+    
+    .client_des p {
+        font-size: 3vw;
+        font-style: italic;
+    }
+    
+
+    .paragraphs {
+        margin-left: 11vw;
+        margin-top: 100px;
+    }
+    
+    .paragraphs p {
+        color: #000;
+        font-family: Helvetica;
+        font-style: italic;
+        font-size: 33px;
+        font-weight: 300;
+        line-height: normal;
+    }
+    
+    .paragraphs e1,
+    .paragraphs e2,
+    .paragraphs e3,
+    .paragraphs e4,
+    .paragraphs e5 {
+        font-family: Helvetica;
+        font-style: italic;
+        font-size: 33px;
+    }
+
+    .client_image_container{
+        height: 0vh;
+    }
+    
+    .client_circle { /*the circle*/
+        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+        width: 550px; /* Adjust the width to your desired dimensions */
+        height: 550px;
+        border-radius: 50%; /* Create a circular clipping effect */
+        overflow: hidden;
+        position: relative; /* Change to relative for normal document flow */
+        margin-top: -200px; /* Adjust margin as needed -100*/
+        margin-right: 100px; /* Center the container horizontally */
+        margin-left: auto; /* Center the container horizontally */
+        transition: all 0.3s;
+    }
+    
+    .client_image_container img {
+        width: 100%; /* Make the image responsive */
+        margin-top: 55px;
+        height: auto;
+        transform: scaleY(1);
+    }
+
+    
+    @media screen and (max-width: 1800px) {
+        .client_circle {
+            max-width: 28vw; /* Set a maximum width for the circle */
+            height: 28vw; /* Maintain aspect ratio */
+        }
+        .paragraphs {
+            text-align: left;
+        }
+    }
+
+    @media screen and (max-width: 1500px) {
+        /* Adjust spacing and sizes for smaller screens */
+    
+        .paragraphs {
+            margin-top: 2vh;
+            margin-left: 0; /* Reset margin for smaller screens */
+        }
+
+        .NP h1 {
+            margin-top: 10vh; /* Adjust the top margin for smaller screens */
+        }
+    
+       
+    
+        .home_intro h1, .client_name p, .client_des p {
+            text-align: center;
+            font-size: 3vw; /* Adjust the font size for smaller screens */
+            margin-left: 0;
+        }
+    
+        .client_image_container {
+            padding-top: 28vh; /*pads circle*/
+            padding-bottom: 4vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Stack the image on top of the text */
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Allow container height to adjust as needed */
+        }
+    
+        .client_circle {
+            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+            width: 50%; /* Adjust the width to your desired dimensions */
+            max-width: 42vw; /* Set a maximum width for the circle */
+            height: 42vw; /* Maintain aspect ratio */
+            border-radius: 50%;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        .client_image_container img {
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            height: auto; /* Maintain the image's aspect ratio */
+        }
+    
+        .paragraphs {
+            text-align: center;
+        }
+    
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            font-family: Helvetica;
+            font-style: italic;
+            font-size: 3vw;
+        }
+    
+        .read-more-button{
+            margin-left: 100px;
+        }
+        .read-more-button img{
+            width: 50px;
+            height: auto;
+        }
+
+    }
+
+    .initial {
+        margin: 0;
+    }
+    
+    .hidden {
+        display: none;
+        margin: 0;
+    }
+    
+    .read-more-button {
+        display: block;
+        margin-top: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: blue; /* Adjust color as needed */
+    }
+
+
+    .hiddenPic {
+        padding: 1010px 242.32px 291.197px 71px;
+        gap: 71px; 
+        position: absolute;
+        display: flex;
+        bottom: -400px; /* Adjust the top position as needed */
+        left: 1500px; /* Adjust the left position as needed */
+    }
+    .hiddenPic img{
+        height: 1000px;
+        width: auto;
+        transition: opacity 2s;
+    }
+      
+      .show-content {
+        right: 0; /* Slide content inside the container (from left to right) */
+      }
+      .hidden-content {
+        display: none;
+      }
+
+
+    .AI{ /*accepted insurances*/
+        margin-top: 100px;
+        margin-bottom: 100px;
+        background-color: #B5D0E0;
+        height: 200px;
+    }
+
+    .AI h1{
+        font-size: 5vw;
+        color: #036080;
+    }
+
+    .logo-container {
+        padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 1000px; /* Adjust the height as needed 100vh*/
+        margin-bottom: -200px;
+      }
+      
+      .top-logos,
+      .bottom-logos {
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        height:auto;
+        gap:100px;
+      }
+      
+      .top-logos {
+        margin-bottom: -100px; /* Adjust the spacing between top and bottom logos */
+      }
+      
+      .IC1,
+      .IC2,
+      .IC3,
+      .IC4,
+      .IC5,
+      .IC6 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        height: auto;
+        margin: 150px;
+      }
+
+      .IC1 img,
+      .IC2 img,
+      .IC3 img,
+      .IC4 img,
+      .IC5 img,
+      .IC6 img{
+        width:22vh;
+        height: auto;
+      }
+
+    @media (max-width: 1300px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .logo_container{
+            height: 5vh;
+        }
+        .top-logos {
+            margin-bottom: 20px; /* Adjust the spacing between top and bottom logos */
+          }
+
+        .top-logos,.bottom-logos{
+            height: 10vh;
+        }
+        .IC1,
+      .IC2,
+      .IC3,
+      .IC4,
+      .IC5,
+      .IC6 {
+        margin: 0px;
+      }
+        .IC1 img,
+      .IC2 img,
+      .IC3 img,
+      .IC4 img,
+      .IC5 img,
+      .IC6 img{
+        width:11vh;
+        height: auto;
+      }
+    }
