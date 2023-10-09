@@ -1,4 +1,6 @@
 
+
+
 *{ /*sets the website border and font*/
     box-sizing: border-box;
     margin: 0;
@@ -20,7 +22,7 @@
 .navbar { /*top bar (color, size, layout, where words are put in box
     ,size of words classified as part of navbar section, ability to slide) */
     background: #036080;
-    height:120px;
+    height:180px;
     display: flex;
     position: relative; /*allows bar to remain visible when scrolling sticky*/
     top:0;
@@ -28,6 +30,15 @@
     align-items: center;
     padding: 10px 20px;
     z-index: 999; /*ensures overlap priority*/
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar{
+        height: 20vw;
+    }
+    .logo img{
+       width:75%; 
+    }
 }
 
 .navbar__container { 
@@ -44,20 +55,20 @@
     flex-shrink: 0;*/
 }
 
-#navbar__logo{
+/*#navbar__logo{
     color: white;
     background-size: 100%;
     display: flex; 
     justify-content: center;
-    align-items:center; /*controls logos latitude*/
-    /*cursor: pointer; allows cursor over words*/
+    align-items:center; controls logos latitude
+    cursor: pointer; allows cursor over words
     text-decoration: none;
     font-size: 2rem;
-}
+}*/
 
 .navbar__menu{ /*this is the vertical menu displayed when 3 bars clicked on*/
     display: inline-flex;
-    padding: 25px 0px;
+    padding: 0px 0px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -84,9 +95,10 @@
     top: 100%;
     opacity: 1;
     z-index: 99;
-    height: 60vh; /*the animation menu background*/
+    height:500px; /*the animation menu background*/
     font-size: 1.6rem;
-    padding-top: 10px;
+    margin-top: 0px; /*makes sure white doesnt overlap blue bar*/
+    padding-top: 0vw;
 }
 
 .navbar__toggle .bar{ /*the hammer bars 3 by 25*/ 
@@ -107,7 +119,7 @@
     display: table;
     color: #036080;
     text-decoration: underline;
-    margin-top: 15px;
+    margin-top: 0px;
     color: #036080;
     font-family: "Cochin";
     font-size: 48px;
@@ -144,9 +156,9 @@
         padding: 0 50px;
     }
 
-    .navbar__menu{ /*this is the vertical display when 3 bars clicked on*/
+    .navbar__menu{ /*this is the white vertical display when 3 bars clicked on*/
         display: inline-flex;
-        padding: 25px 0px;
+        padding: 10vw 0px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -163,26 +175,25 @@
         z-index: -1;
     }
 
-    .navbar__menu.active{ /*the javascript that triggers this, the white square links are on*/
-            background: white;
-            top: 100%;
-            opacity: 1;
-            z-index: 99;
-            height: 60vh;
-            font-size: 1.2rem;
-            padding-top: 10px;
-            flex-direction: inline;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            width: 90%; /* Use a percentage value for responsiveness */
-            max-width: 700px; /* Set a maximum width for larger screens */
-            position: absolute;
-            right: 5%; /* Use a percentage value for responsive positioning */
-            list-style: none;
-            padding-left: 5%; /* Use a percentage value for responsive padding */
-        
+    .navbar__menu.active {
+        background: white;
+        top: 100%;
+        opacity: 1;
+        z-index: 999; /* Set a high z-index value to ensure it's on top */
+        height: 85vw;
+        font-size: 1.2rem;
+        flex-direction: inline;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 90%; /* Use a percentage value for responsiveness */
+        max-width: 700px; /* Set a maximum width for larger screens */
+        position: absolute;
+        right: 5%; /* Use a percentage value for responsive positioning */
+        list-style: none;
+        padding-left: 5%; /* Use a percentage value for responsive padding */
     }
+    
     
     #navbar__logo{
         padding-left: 25px;
@@ -190,7 +201,7 @@
 
     
     .navbar__links{
-        height: 122px;
+        height: 0px;
         justify-content: space-between;
         align-items: center;
         text-align: center;
@@ -198,13 +209,14 @@
         display: table;
         color: #036080;
         text-decoration: underline;
-        margin-top: 15px;
+        padding-top: 5vw; /*15px*/
         color: #036080;
         font-family: "Cochin";
-        font-size: 48px;
+        font-size: 4vw; /*48px*/
         font-style: normal;
         font-weight: 500;
         line-height: 1.2;
+        margin-bottom: -50px;
     }
     #mobile-menu{
         position:absolute;
@@ -304,7 +316,7 @@
 }
 
 .contact__content{ /*hear from you container*/
-    height: 370px;
+    height: 20vw;
     display: flex;
     justify-content: center; /* Horizontally center content */
     align-items: center; /* Vertically center content */
@@ -345,7 +357,7 @@
 
 .after_contact_container{ /*its the Contact Details box*/
     width: 100%;
-    height: auto; /* Set the desired height 462px */
+    height: 20vw; /* Set the desired height 462px */
     padding: 15px 0;
     /*border: 1px solid #000;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
@@ -379,7 +391,7 @@
 
 .contact_name{
     font-size: 4.5vw;/*96px;*/
-    margin: 0 auto; /*moves name down from contact details*/
+    margin: 100px auto; /*moves name down from contact details*/
     font-family: "Helvetica", Cochin;
     font-weight: 300;
     font-style: normal;
@@ -387,7 +399,7 @@
     text-align: center;
     line-height: normal;
     max-width: 90%;
-    padding-bottom: 100px;
+    padding-bottom: 0px;
 }
 
 .row{
@@ -468,9 +480,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+    padding-top: 3vw;
 }
 
+@media screen and (max-width: 1000px) {
+    .footer_light_blue_container{
+        height:20vw;
+    }
+    .special img{
+        width: 100px;
+    }
+}
 
 
 .hotline_resources{
@@ -516,7 +536,7 @@
 
 .rows{
     width: 100%;
-    height: 34vh; /* Set the desired height 450px*/
+    height: 250px;
     background: linear-gradient(180deg, rgba(223, 234, 240, 0.80) 0%, rgba(223, 234, 240, 0.00) 100%);display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -535,7 +555,7 @@
 }
 
 .Emergency_text_box_orange{ /*detox programs*/
-    height: 320px;
+    height: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -554,7 +574,7 @@
 
 .row-orange{
     width: 100%;
-    height: 350px; /* Set the desired height 450px*/
+    height: 250px; /* Set the desired height 450px*/
     background: linear-gradient(180deg, rgba(236, 225, 214, 0.38) 0%, rgba(236, 225, 214, 0.00) 100%);display: flex;
     flex-direction: column; /*name and under it is number*/
     justify-content: center;
@@ -576,7 +596,7 @@
     .rows {
         padding-left: 3%;
         padding-right: 3%;
-        height: 40vh;
+        height: 25vh;
     }
 
     .rect_1,.rect_2,.rect_3,.rect_4,.rect_5,.rect_6,.rect_7,
@@ -599,12 +619,15 @@
         font-size: 4.5vw;
         max-width: 100%;
     }
+    .row-orange{
+        height: 25vh;
+    }
 }
 
 .footer_orange_container{
     margin-top: 100px; /*distance from footer*/
     background: #F2AA8D;
-    height: 196px;
+    height: 180px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -615,7 +638,17 @@
     height: 100px;
 }
 
-
+@media screen and (max-width: 1000px) {
+    .footer_orange_container{
+        height: 20vw;
+    }
+    .footer_orange_container img{
+        width: 75%;
+    }
+    .white_after_logo{
+        height:15vw;
+    }
+}
 
 
 .container_extra_wide{ /*the designers picture*/
@@ -755,15 +788,15 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 20px; /* Adjust as needed */
+        padding: 0vw; /* Adjust as needed */
         color: #FFF; /* Set the color of the text */
         text-align: center;
-        margin-top: 180px;
+        margin-top: 18vw;
     }
     
     .text-container p { /* paragraph on mental health */
         font-family: "Helvetica";
-        font-size: 5vw; /* Adjust the font size as needed */
+        font-size: 3.5vw; /* Adjust the font size as needed */
         font-style: normal;
         font-weight: 300;
         line-height: normal;
@@ -793,7 +826,7 @@
     .services_offered h1{
         color: #036080;
         font-family: "Cochin", Arial;
-        font-size: 13vw; /*150px*/
+        font-size: 8vw; /*150px*/
         font-style: normal;
         font-weight: 500;
         line-height: normal;
@@ -804,13 +837,13 @@
         background-color: #DFEAF0;
         /*justify-content: space-between;*/
         align-items: center; /*keeps text in line with pic*/
-        padding: 20px 0 50px 100px; /*moves logo pics away from left side some*/
+        padding: 0px 0 50px 100px; /*moves logo pics away from left side some*/
     }
 
     .row1,.row2,.row3,.row4,.row5,.row6{
         color: #036080;
-        font-size: 5.5vw; /*100px*/
-        margin-left: 11vw;
+        font-size: 3.5vw; /*100px*/
+        margin-left: 20px;
         text-align: left;
         font-family: "Helvetica", Cochin;
         font-weight: 300;
@@ -819,17 +852,46 @@
     }
 
     @media screen and (max-width:850px) {
+        .text-container{
+            margin-top: 21vw;
+        }
+        .text-container p{
+            font-size: 5vw;
+        }
+        .services_orange{
+            height: 10vh;
+        }
+        .services_offered{
+            height: 20vh;
+        }
+        .services_offered h1{
+            font-size: 6vw;
+        }
         .row1,.row2,.row3,.row4,.row5,.row6{
-        text-align: center;
-        margin-left: 0vw;
+        margin-left: -20px;
+        font-size: 5vw;
         }
     }
 
     .row1{
-        padding-top: 180px;
+        padding-top: 180px; /*180px*/
     }
     .row6{
-        padding-bottom: 250px;
+        padding-bottom: 250px; /*250px*/
+    }
+
+    .white_container{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        height: 200px;
+    }
+
+    .blue_log{
+        padding-top: 50px;
+    }
+    .blue_log img{
+        width: 150px;
     }
     
 
@@ -837,6 +899,8 @@
         background-color: #FFFFFF;
         margin-top: -100px;
     }
+
+
 
 
 
@@ -991,7 +1055,7 @@ position: relative;
     }
 
     
-    @media screen and (max-width: 1800px) {
+    @media screen and (max-width: 1800px) { /*still horizontal here*/
         .client_circle {
             max-width: 28vw; /* Set a maximum width for the circle */
             height: 28vw; /* Maintain aspect ratio */
@@ -1043,6 +1107,7 @@ position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: -20vh;
             margin-left: auto;
             margin-right: auto;
         }
@@ -1121,7 +1186,7 @@ position: relative;
         margin-top: 100px;
         margin-bottom: 100px;
         background-color: #B5D0E0;
-        height: 200px;
+        height: 20vw;
     }
 
     .AI h1{
@@ -1130,12 +1195,12 @@ position: relative;
     }
 
     .logo-container {
-        padding-top: 200px;
+        padding-top: 500px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 1000px; /* Adjust the height as needed 100vh*/
+        height: 1500px; /* Adjust the height as needed 100vh*/
         margin-bottom: -200px;
       }
       
@@ -1176,20 +1241,21 @@ position: relative;
         height: auto;
       }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1500px) {
         .grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
-        .logo_container{
-            height: 5vh;
+        .logo-container{
+            padding-top: 20vw;
+            height: 120vh;
         }
         .top-logos {
-            margin-bottom: 20px; /* Adjust the spacing between top and bottom logos */
+            margin-bottom: 5vw; /* Adjust the spacing between top and bottom logos 20px*/
           }
 
         .top-logos,.bottom-logos{
-            height: 10vh;
+            padding-top: -80vw;
         }
         .IC1,
       .IC2,
@@ -1209,3 +1275,4 @@ position: relative;
         height: auto;
       }
     }
+    
