@@ -1,6 +1,4 @@
 
-
-
 *{ /*sets the website border and font*/
     box-sizing: border-box;
     margin: 0;
@@ -34,10 +32,14 @@
 
 @media screen and (max-width: 1000px) {
     .navbar{
-        height: 20vw;
+        height: 12vw;
+    }
+    .logo{
+        margin-top: 3vw;
+        margin-left: 12vw;
     }
     .logo img{
-       width:75%; 
+       width:50%; 
     }
 }
 
@@ -49,7 +51,7 @@
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 0px;
     /*width: 143.26px;
     height: 76.65px;
     flex-shrink: 0;*/
@@ -152,8 +154,6 @@
         z-index: 1;
         width: 100%;
         max-width: 1300px;
-        margin: 0 auto;
-        padding: 0 50px;
     }
 
     .navbar__menu{ /*this is the white vertical display when 3 bars clicked on*/
@@ -180,25 +180,19 @@
         top: 100%;
         opacity: 1;
         z-index: 999; /* Set a high z-index value to ensure it's on top */
-        height: 85vw;
-        font-size: 1.2rem;
+        height: 500px;
+        font-size: 1.2vw;
         flex-direction: inline;
         justify-content: center;
         align-items: center;
-        gap: 15px;
-        width: 90%; /* Use a percentage value for responsiveness */
+        gap: 2vw; /*seperates column of words gap vertical*/
+        width: 70%; /* Use a percentage value for responsiveness */
         max-width: 700px; /* Set a maximum width for larger screens */
         position: absolute;
         right: 5%; /* Use a percentage value for responsive positioning */
         list-style: none;
-        padding-left: 5%; /* Use a percentage value for responsive padding */
+        padding-left: 0%; /* Use a percentage value for responsive padding */
     }
-    
-    
-    #navbar__logo{
-        padding-left: 25px;
-    }
-
     
     .navbar__links{
         height: 0px;
@@ -249,14 +243,16 @@
 
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1000px) {
     .navbar__toggle .bar{ /*the hamburger bars 3 by 25*/ 
+        display: flex;
+        align-content: center;
         width: 50px;
         height: 4px;
         margin: 0px 60px;
         transition: all 0.3s ease-in-out;
         background: #fff;
-        margin-bottom: 12px; /*spreads out line height between bars*/
+        margin-bottom: 5%; /*spreads out line height between bars*/
     }
 }
 
@@ -324,7 +320,7 @@
     position: relative;
 }
 
-.contact__content h1 { /*love to hear*/
+.contact__content div { /*love to hear*/ /*make inner div the same size as outer div*/
     font-family: "Helvetica", Arial;
     /*font-size: 120px;*/
     font-size: 5.5vw; /*allows responsive*/
@@ -374,9 +370,6 @@
     font-weight: 500;
     line-height: normal;
     margin: 110px auto 180px; /*centers text contact details vertically and creates space */
-    /*margin-top: 30vh;154px;
-    margin-bottom: 30vh; 161px;
-    align-items: center;*/
     text-align: center;
     white-space: nowrap;
     max-width: 90%;
@@ -387,6 +380,7 @@
     flex-direction: column; /*makes it like a list*/
     align-items: left;
     text-align: left;
+    padding-bottom: 10vw;
 }
 
 .contact_name{
@@ -446,21 +440,28 @@
 
 /* Media query for smaller screens */
 @media (max-width: 1520px) {
+    .after_contact_container h1{
+        margin-top: 4vw;
+    }
+    .contact_name{
+        margin-top: 1vw; /*moves name down from contact details*/
+        margin-bottom: 5vw;
+    }
     .row {
-        padding-left: 20vw;
+        padding-left: 10vw;
     }
 
     .phone_number,
     .email,
     .address {
-        font-size: 3vw;
-        padding: 2vh 2vw;
+        font-size: 4vw;
+        padding: 1vw 2vw;
     }
 
     .phone_logo,
     .email_logo,
     .address_logo {
-        margin-top: 4vh;
+        margin-top: 1vw;
     }
 
     .phone_logo img,
@@ -470,27 +471,33 @@
     }
 }
 
-.footer_light_blue_container{
-    margin-top: 120px; /*distance from footer*/
+/*.footer_light_blue_container{
+    margin-top: 10vw; distance from qr code and arrow to footer
     background: #DFEAF0;
     height: 196px;
-}
+    display: flex;
+}*/
 
 .light_blue_logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 3vw;
+    padding-top: 5%;
 }
 
-@media screen and (max-width: 1000px) {
+/*@media screen and (max-width: 1000px) {
     .footer_light_blue_container{
+        margin-top: 5vw;
+        margin-bottom: -5vw;
         height:20vw;
     }
     .special img{
-        width: 100px;
+        width: 10%;
     }
-}
+}*/
+
+
+
 
 
 .hotline_resources{
@@ -593,17 +600,21 @@
 }
 
 @media (max-width: 968px) {
+    .Emergency_text_box{
+        height: 15vw;
+        margin-top: 9vw; /*moves emergency box down so purple in pic shown*/
+    }
     .rows {
         padding-left: 3%;
         padding-right: 3%;
-        height: 25vh;
+        height: 22vw; /*row height*/
     }
 
     .rect_1,.rect_2,.rect_3,.rect_4,.rect_5,.rect_6,.rect_7,
     .rect_1_num,.rect_2_num,.rect_3_num,.rect_4_num,.rect_5_num,.rect_6_num,.rect_7_num,
     .rect_10,.rect_11,.rect_12,.rect_13,.rect_10_num,.rect_11_num,.rect_12_num,.rect_13_num{
         font-size: 4.5vw;
-        margin-top: 4vh;
+        /*margin-top: 2vh;*/
         max-width: 100%; /* Adjust size for smaller screens */
         white-space: nowrap;
         line-height: normal; /* Adjust line-height for vertical centering */
@@ -611,27 +622,34 @@
         
     }
 
+    .eight, .nine{
+        height: 25vw; /*row height*/
+    }
+
     .rect_8,.rect_8_num, .rect_9,.rect_9_num{
         display: grid;
         margin-left: 10vw;
         line-height: normal;
-        margin-top: 4vh;
+        /*margin-top: 2vw;*/
         font-size: 4.5vw;
         max-width: 100%;
     }
     .row-orange{
-        height: 25vh;
+        height: 22vw;
     }
 }
 
 .footer_orange_container{
-    margin-top: 100px; /*distance from footer*/
+    margin-top: 0px; /*distance from footer*/
     background: #F2AA8D;
     height: 180px;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center
+}
+.bb{
+    background: #DFEAF0;
 }
 
 .white_after_logo{
@@ -640,17 +658,24 @@
 
 @media screen and (max-width: 1000px) {
     .footer_orange_container{
-        height: 20vw;
+        margin-top: 0px; 
+        height: 13vw;
     }
     .footer_orange_container img{
-        width: 75%;
+        width: 50%;
     }
     .white_after_logo{
-        height:15vw;
+        height:8vw;
     }
 }
 
 
+
+
+
+
+
+/*Hotline*/
 .container_extra_wide{ /*the designers picture*/
     display: flex;
     flex-direction: column;
@@ -697,14 +722,8 @@
     font-weight: 300;
     line-height: normal;
     height: 10vh;
-    margin-bottom: 100px;
+    margin-bottom: 10%;
 }
-
-@media screen and (max-width: 768px) {
-    .check_out_info_container h2 {
-      margin-bottom: 0px; /* Decrease the margin for smaller screens */
-    }
-  }
 
 .check_out_info_container p{ /* @hamptons text*/
     color: #036080;
@@ -714,7 +733,7 @@
     font-family: "Helvetica", Arial; 
     font-weight: 300;
     line-height: normal;
-    height: 10vh;
+    height: 10%;
    
 }
 
@@ -722,20 +741,20 @@
     display: flex;
     position: relative; /* Add positioning to the container relative */
     left: 55vw;
-    bottom: 4vw; /*100px*/
+    bottom: 2vw; /*100px*/
     /*left: 850px;
     bottom: 20px; /*moves arrow down*/
   }
 
   .arrow img{
     width: auto; /* Set your desired width 600px*/
-    height: 12vw; /* Set your desired height 300px*/
+    height: 12vw; /* Set your desired height 300px 12vw*/
   }
 
   .qrcode_container {
     display: flex;
     position: relative;
-    bottom: 12vw;/*250px*/
+    bottom: 10vw;/*250px*/
     left: 75%;
   }
   
@@ -744,14 +763,35 @@
     height: 20vw;
   }  
 
-  .special2 img { /*the designer pic messed up margins so -12 margin bottom needed*/
-    max-width: 150px; /* Set the desired max width for the image */
-    width: 150px;
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: -12px;
+  /* Style the .footer_hotline container */
+ .special_hotline{
+padding-top: 100px;
+ }
+  
+
+    @media screen and (max-width: 768px) {
+        
+        .arrow img{
+            height: 14vw;
+        }
+        .qrcode_container {
+            padding-bottom: 100px;
+            padding-top: -100px;
+            margin-bottom: -100px; /*this controls how far away footer is from qrocde*/
+        }
+        .qrcode_container img {
+            bottom: -100px;
+        }
+        .check_out_info_container h2{
+            margin-bottom: 0%;
+        }
     }
 
 
+
+
+
+    /*home*/
 
     .container_with_gradient {
         background: url(<path-to-image>), lightgray -0.125px 0px / 100.246% 119.927% no-repeat;
@@ -796,17 +836,17 @@
     
     .text-container p { /* paragraph on mental health */
         font-family: "Helvetica";
-        font-size: 3.5vw; /* Adjust the font size as needed */
+        font-size: 3vw; /* Adjust the font size as needed */
         font-style: normal;
         font-weight: 300;
         line-height: normal;
         margin-bottom: 6vw;
-        margin-top: 3vw;
+        margin-top: 0%;
     }
     
     .text-container .p2 { /* Matt Haig */
         font-family: "Helvetica";
-        font-size: 5vw; /* Adjust the font size as needed */
+        font-size: 3vw; /* Adjust the font size as needed */
         font-style: italic;
         font-weight: 300;
         line-height: 0%;
@@ -826,7 +866,7 @@
     .services_offered h1{
         color: #036080;
         font-family: "Cochin", Arial;
-        font-size: 8vw; /*150px*/
+        font-size: 4vw; /*150px*/
         font-style: normal;
         font-weight: 500;
         line-height: normal;
@@ -837,13 +877,13 @@
         background-color: #DFEAF0;
         /*justify-content: space-between;*/
         align-items: center; /*keeps text in line with pic*/
-        padding: 0px 0 50px 100px; /*moves logo pics away from left side some*/
+        padding: 30px 100px; /*seperates word rows and moves away from left side some*/
     }
 
     .row1,.row2,.row3,.row4,.row5,.row6{
         color: #036080;
-        font-size: 3.5vw; /*100px*/
-        margin-left: 20px;
+        font-size: 3.2vw; /*100px*/
+        margin-left: 5vw;
         text-align: left;
         font-family: "Helvetica", Cochin;
         font-weight: 300;
@@ -856,7 +896,7 @@
             margin-top: 21vw;
         }
         .text-container p{
-            font-size: 5vw;
+            font-size: 3vw;
         }
         .services_orange{
             height: 10vh;
@@ -866,6 +906,12 @@
         }
         .services_offered h1{
             font-size: 6vw;
+        }
+        .row1{
+           margin-top: -150px;
+        }
+        .row6{
+            margin-bottom: -40vw;
         }
         .row1,.row2,.row3,.row4,.row5,.row6{
         margin-left: -20px;
@@ -880,25 +926,12 @@
         padding-bottom: 250px; /*250px*/
     }
 
-    .white_container{
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        height: 200px;
-    }
-
-    .blue_log{
-        padding-top: 50px;
-    }
-    .blue_log img{
-        width: 150px;
+    .serve{
+        background-color: #FFFFFF;
+        margin-top: 0%;
     }
     
-
-    .white{
-        background-color: #FFFFFF;
-        margin-top: -100px;
-    }
+    
 
 
 
@@ -948,20 +981,8 @@ position: relative;
     .NP{
         position: absolute;
         display: flex;
-        margin-top:140px;
+        margin-top:8%;/*140px*/
         margin-left: 11vw;
-    }
-
-    
-    @media (max-width: 1300px) {
-        .NP{
-        margin-top:0vh;
-        }
-    }
-    @media (max-width: 800px) {
-        .NP{
-        margin-top:0vh;
-        }
     }
 
     .NP h1{ /*NP psych on top of pic*/
@@ -971,7 +992,7 @@ position: relative;
     }
     
     .NP h1 {
-        margin-top: 15vh; /* Adjust the top margin as needed */
+        margin-top: 8%; /* Adjust the top margin as needed */
         font-size: 4vw; /* Adjust the font size as needed */
     }
 
@@ -993,7 +1014,8 @@ position: relative;
     }
 
     .home_intro h1{ /*nice to meet you*/
-        font-size: 3vw;
+        font-size: 3.2vw;
+        padding-bottom: 3vw;
     }
     
     .client_name p {
@@ -1002,7 +1024,7 @@ position: relative;
     
     .client_des p {
         font-size: 3vw;
-        font-style: italic;
+        font-style: normal;
     }
     
 
@@ -1042,7 +1064,7 @@ position: relative;
         overflow: hidden;
         position: relative; /* Change to relative for normal document flow */
         margin-top: -200px; /* Adjust margin as needed -100*/
-        margin-right: 100px; /* Center the container horizontally */
+        margin-right: 10vw; /* Center the container horizontally */
         margin-left: auto; /* Center the container horizontally */
         transition: all 0.3s;
     }
@@ -1073,13 +1095,14 @@ position: relative;
             margin-left: 0; /* Reset margin for smaller screens */
         }
 
-        .NP h1 {
-            margin-top: 10vh; /* Adjust the top margin for smaller screens */
+        .home_intro h1{
+            padding-bottom: 3vw;
+            font-size: 4vw;
+            text-align: center;
+            margin-left: 0;
         }
-    
-       
-    
-        .home_intro h1, .client_name p, .client_des p {
+
+        .client_name p, .client_des p {
             text-align: center;
             font-size: 3vw; /* Adjust the font size for smaller screens */
             margin-left: 0;
@@ -1161,17 +1184,33 @@ position: relative;
 
 
     .hiddenPic {
-        padding: 1010px 242.32px 291.197px 71px;
+        padding: 1010px 0px 291.197px 71px;
         gap: 71px; 
         position: absolute;
         display: flex;
         bottom: -400px; /* Adjust the top position as needed */
         left: 1500px; /* Adjust the left position as needed */
+        max-width: 100%; /* Ensure the image doesn't exceed the screen width */
     }
-    .hiddenPic img{
-        height: 1000px;
-        width: auto;
-        transition: opacity 2s;
+
+    .hiddenPic img{ /*the sliding animation*/
+        width:800px; /*200px*/
+        border-radius: 60px;
+        position:relative;
+        top:0%; /*100%*/
+        opacity:0;
+        animation:load_up 4s forwards;
+        -webkit-animation:load_up 4s forwards;
+    }
+
+    @keyframes load_up{
+        from{opacity:0;right:0%}
+        to{opacity:1;right:5vw;}
+    
+    }@-webkit-keyframes load_up{
+        from{opacity:0;right:0%}
+        to{opacity:1;right:15%;}
+    
     }
       
       .show-content {
@@ -1195,12 +1234,12 @@ position: relative;
     }
 
     .logo-container {
-        padding-top: 500px;
+        padding-top: 20vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 1500px; /* Adjust the height as needed 100vh*/
+        height: 1450px; /* Adjust the height as needed 100vh*/
         margin-bottom: -200px;
       }
       
@@ -1241,21 +1280,21 @@ position: relative;
         height: auto;
       }
 
-    @media (max-width: 1500px) {
+    @media (max-width: 1600px) {
         .grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            /*gap: 1000px;*/
         }
         .logo-container{
             padding-top: 20vw;
-            height: 120vh;
+            height: 70vw;
         }
         .top-logos {
-            margin-bottom: 5vw; /* Adjust the spacing between top and bottom logos 20px*/
+            margin-bottom: 15vw; /* Adjust the spacing between top and bottom logos 20px*/
           }
 
         .top-logos,.bottom-logos{
-            padding-top: -80vw;
+            /*padding-top: 0vw;*/
         }
         .IC1,
       .IC2,
@@ -1263,7 +1302,7 @@ position: relative;
       .IC4,
       .IC5,
       .IC6 {
-        margin: 0px;
+        margin: -15vw; /*controls spacing among all logos*/
       }
         .IC1 img,
       .IC2 img,
@@ -1271,8 +1310,70 @@ position: relative;
       .IC4 img,
       .IC5 img,
       .IC6 img{
-        width:11vh;
+        width:15vw;
         height: auto;
       }
     }
+
+    @media (max-width: 1300px) {
+        .logo-container{
+            padding-top: 20vw;
+            height: 80vw;
+        }
+        .top-logos {
+            margin-bottom: 15vw; /* Adjust the spacing between top and bottom logos 20px*/
+          }
+
+        .top-logos,.bottom-logos{
+            /*padding-top: 0vw;*/
+        }
+        .IC1,
+      .IC2,
+      .IC3,
+      .IC4,
+      .IC5,
+      .IC6 {
+        margin: -18vw; /*controls spacing among all logos*/
+      }
+        .IC1 img,
+      .IC2 img,
+      .IC3 img,
+      .IC4 img,
+      .IC5 img,
+      .IC6 img{
+        width:15vw;
+        height: auto; /*of the logos themselves*/
+      }
+}
+
+@media (max-width: 1000px) {
+    .logo-container{
+        padding-top: 10vw;
+        height: 100vw;
+    }
+    .IC1,
+      .IC2,
+      .IC3,
+      .IC4,
+      .IC5,
+      .IC6 {
+        margin: -20vw; /*controls spacing among all logos*/
+      }
+    }
+
+    @media (max-width: 800px) {
+        .logo-container{
+            padding-top: 10vw;
+            height: 120vw;
+        }
+        .IC1,
+          .IC2,
+          .IC3,
+          .IC4,
+          .IC5,
+          .IC6 {
+            margin: -23vw; /*controls spacing among all logos*/
+          }
+        }
+    
     
