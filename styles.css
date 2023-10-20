@@ -35,11 +35,13 @@
         height: 12vw;
     }
     .logo{
-        margin-top: 3vw;
-        margin-left: 12vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .logo img{
-       width:50%; 
+       width:40%; 
+       height: auto;
     }
 }
 
@@ -122,6 +124,7 @@
     color: #036080;
     text-decoration: underline;
     margin-top: 0px;
+    padding-top:10px;
     color: #036080;
     font-family: "Cochin";
     font-size: 48px;
@@ -150,10 +153,10 @@
     .navbar__container{
         display: flex; /*allows me to control spacing of child elements*/
         justify-content:center; /*aligns the child elements*/
-        height: 80px; /*the latitude of navbar_container not logo*/
+        height: 90px; /*the latitude of navbar_container not logo*/
         z-index: 1;
         width: 100%;
-        max-width: 1300px;
+        max-width: 100%;
     }
 
     .navbar__menu{ /*this is the white vertical display when 3 bars clicked on*/
@@ -203,7 +206,7 @@
         display: table;
         color: #036080;
         text-decoration: underline;
-        padding-top: 5vw; /*15px*/
+        padding-top: 50px; /*15px*/
         color: #036080;
         font-family: "Cochin";
         font-size: 4vw; /*48px*/
@@ -247,12 +250,15 @@
     .navbar__toggle .bar{ /*the hamburger bars 3 by 25*/ 
         display: flex;
         align-content: center;
-        width: 50px;
-        height: 4px;
+        width: 40px;
+        height: 2px;
         margin: 0px 60px;
         transition: all 0.3s ease-in-out;
         background: #fff;
         margin-bottom: 5%; /*spreads out line height between bars*/
+    }
+    .navbar__links{
+        padding-top: 30px;
     }
 }
 
@@ -638,6 +644,15 @@
         height: 22vw;
     }
 }
+  p a1 {
+    text-decoration: none; /* Remove underlines from links */
+    color: #000; /* Set the link color */
+  }
+  
+  /* Style the link on hover */
+  p a1:hover {
+    text-decoration: none; /* Underline the link on hover */
+  }
 
 .footer_orange_container{
     margin-top: 0px; /*distance from footer*/
@@ -648,8 +663,11 @@
     text-align: center;
     justify-content: center
 }
-.bb{
+.bb1{
     background: #DFEAF0;
+}
+.bb{
+    background: #FFF;
 }
 
 .white_after_logo{
@@ -662,7 +680,7 @@
         height: 13vw;
     }
     .footer_orange_container img{
-        width: 50%;
+        width: 40%;
     }
     .white_after_logo{
         height:8vw;
@@ -710,6 +728,7 @@
     justify-content: center;
     text-align: left;
     margin-top: 0;
+    margin-bottom: 5%;
     
 }
 
@@ -722,7 +741,7 @@
     font-weight: 300;
     line-height: normal;
     height: 10vh;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .check_out_info_container p{ /* @hamptons text*/
@@ -734,8 +753,19 @@
     font-weight: 300;
     line-height: normal;
     height: 10%;
+    margin-bottom: 5%;
    
 }
+
+p a {
+    text-decoration: none; /* Remove underlines from links */
+    color:  #036080; /* Set the link color */
+  }
+  
+  /* Style the link on hover */
+  p a:hover {
+    text-decoration: none; /* Underline the link on hover */
+  }
 
 .arrow {
     display: flex;
@@ -762,13 +792,25 @@
     width: auto;
     height: 20vw;
   }  
-
-  /* Style the .footer_hotline container */
- .special_hotline{
-padding-top: 100px;
- }
   
+  .special_hamp{
+    background-color: #DFEAF0;
+  }
+  .hamp img{
+    width: 144px;
+    height: auto;
+    transform: none;
+    object-fit: cover;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
 
+  @media screen and (max-width: 1000px){
+    .hamp img{
+        width: 40%;
+    }
+  }
+  
     @media screen and (max-width: 768px) {
         
         .arrow img{
@@ -791,7 +833,7 @@ padding-top: 100px;
 
 
 
-    /*home*/
+    /*services*/
 
     .container_with_gradient {
         background: url(<path-to-image>), lightgray -0.125px 0px / 100.246% 119.927% no-repeat;
@@ -923,7 +965,7 @@ padding-top: 100px;
         padding-top: 180px; /*180px*/
     }
     .row6{
-        padding-bottom: 250px; /*250px*/
+        margin-bottom: 10vw; /*250px*/
     }
 
     .serve{
@@ -937,7 +979,7 @@ padding-top: 100px;
 
 
 
-
+    /*home*/
     .main_page_img img {
         margin-top: -12vw; /* Crops top of image -12.5 */
         transform: scaleY(0.8); /* Initial scale */
@@ -952,32 +994,6 @@ padding-top: 100px;
             transform: scaleY(1.5); /* Make the image even bigger for even smaller screens */
         }
     }
-    
-
-
-    /*.trapezoid_container {
-        position: absolute;
-        top: 130px;
-        right: 350px;
-        width: 100%;
-        padding: 20px; /* Adjust as needed 
-        color: #FFF;  Set the color of the text 
-        text-align: center;
-        display: flex;
-flex-direction: column;
-width: 100%;
-max-width: 100%;
-margin: 0 auto;
-  margin-top: 0px;
-position: relative;
-    }
-
-    .trapezoid_container img {
-        width: 100%; /* Ensure the image covers the container 
-        height: auto;  Ensure the image covers the container 
-        clip-path: polygon(0 0, 54% 0, 100% 100%, 0% 556.233px);
-        margin-top: -12.5vw;
-    }*/
     .NP{
         position: absolute;
         display: flex;
@@ -1064,7 +1080,7 @@ position: relative;
         overflow: hidden;
         position: relative; /* Change to relative for normal document flow */
         margin-top: -200px; /* Adjust margin as needed -100*/
-        margin-right: 10vw; /* Center the container horizontally */
+        margin-right: 10%; /* Center the container horizontally */
         margin-left: auto; /* Center the container horizontally */
         transition: all 0.3s;
     }
@@ -1080,6 +1096,7 @@ position: relative;
     @media screen and (max-width: 1800px) { /*still horizontal here*/
         .client_circle {
             max-width: 28vw; /* Set a maximum width for the circle */
+            margin-right: 5%; /* Center the container horizontally */
             height: 28vw; /* Maintain aspect ratio */
         }
         .paragraphs {
@@ -1184,17 +1201,18 @@ position: relative;
 
 
     .hiddenPic {
-        padding: 1010px 0px 291.197px 71px;
+        padding: 0px 0px 10% 71px;
         gap: 71px; 
         position: absolute;
         display: flex;
-        bottom: -400px; /* Adjust the top position as needed */
-        left: 1500px; /* Adjust the left position as needed */
+        bottom: -200px; /* moves lsiding pic closer to author pic */
+        left: 1200px; /* Adjust the left position as needed */
         max-width: 100%; /* Ensure the image doesn't exceed the screen width */
     }
 
     .hiddenPic img{ /*the sliding animation*/
-        width:800px; /*200px*/
+        max-width: 100%;
+        width:900px; /*200px*/
         border-radius: 60px;
         position:relative;
         top:0%; /*100%*/
@@ -1205,12 +1223,18 @@ position: relative;
 
     @keyframes load_up{
         from{opacity:0;right:0%}
-        to{opacity:1;right:5vw;}
+        to{opacity:1;right:20%;}
     
     }@-webkit-keyframes load_up{
         from{opacity:0;right:0%}
-        to{opacity:1;right:15%;}
+        to{opacity:1;right:20%;}
     
+    }
+
+    @media screen and (max-width: 1800px) {
+        .hiddenPic img{
+            display: none; /* Hide the .hiddenPic at this screen width */
+        }
     }
       
       .show-content {
@@ -1234,26 +1258,27 @@ position: relative;
     }
 
     .logo-container {
-        padding-top: 20vw;
+        max-width: 100%;
+        padding-top: 32%; /*dont know why but very important*/
+        padding-bottom: 5%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 1450px; /* Adjust the height as needed 100vh*/
-        margin-bottom: -200px;
+        height: 100%; /* Adjust the height as needed 100vh*/
+        margin-bottom: 0px;
+        justify-content: space-evenly;
       }
       
+      .top-logos{
+        margin-top: 0%;
+      }
       .top-logos,
       .bottom-logos {
         display: flex;
+        width: 100%;
+        height:10%;
         justify-content: center;
-        width: 50px;
-        height:auto;
-        gap:100px;
-      }
-      
-      .top-logos {
-        margin-bottom: -100px; /* Adjust the spacing between top and bottom logos */
       }
       
       .IC1,
@@ -1262,39 +1287,48 @@ position: relative;
       .IC4,
       .IC5,
       .IC6 {
-        display: flex;
+        display: inline-block;
         align-items: center;
         justify-content: center;
         max-width: 100%;
-        height: auto;
-        margin: 150px;
+        margin: 1vw 6vw; /*20px seperates each element*/
+        height: 10%;
       }
 
+      .IC3 img{
+        width:140px;/*90px*/
+        height: auto;
+      }
       .IC1 img,
       .IC2 img,
-      .IC3 img,
       .IC4 img,
       .IC5 img,
       .IC6 img{
-        width:22vh;
+        width:160px; /*100px*/
         height: auto;
       }
 
-    @media (max-width: 1600px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
-            /*gap: 1000px;*/
-        }
+      @media screen and (max-width: 1000px) {
         .logo-container{
-            padding-top: 20vw;
-            height: 70vw;
+            padding-top: 40%;
         }
-        .top-logos {
-            margin-bottom: 15vw; /* Adjust the spacing between top and bottom logos 20px*/
+        .IC3 img{
+            width:80px;/*90px*/
+            height: auto;
           }
+          .IC1 img,
+          .IC2 img,
+          .IC4 img,
+          .IC5 img,
+          .IC6 img{
+            width:100px; /*100px*/
+            height: auto;
+          }
+      }
 
-        .top-logos,.bottom-logos{
-            /*padding-top: 0vw;*/
+      @media screen and (max-width: 600px) {
+        .logo-container{
+            padding-top: 48%;
         }
         .IC1,
       .IC2,
@@ -1302,78 +1336,18 @@ position: relative;
       .IC4,
       .IC5,
       .IC6 {
-        margin: -15vw; /*controls spacing among all logos*/
+        margin: 1vw 5vw; /*20px seperates each element*/
       }
-        .IC1 img,
-      .IC2 img,
-      .IC3 img,
-      .IC4 img,
-      .IC5 img,
-      .IC6 img{
-        width:15vw;
-        height: auto;
-      }
-    }
-
-    @media (max-width: 1300px) {
-        .logo-container{
-            padding-top: 20vw;
-            height: 80vw;
-        }
-        .top-logos {
-            margin-bottom: 15vw; /* Adjust the spacing between top and bottom logos 20px*/
+        .IC3 img{
+            width:60px;/*90px*/
+            height: auto;
           }
-
-        .top-logos,.bottom-logos{
-            /*padding-top: 0vw;*/
-        }
-        .IC1,
-      .IC2,
-      .IC3,
-      .IC4,
-      .IC5,
-      .IC6 {
-        margin: -18vw; /*controls spacing among all logos*/
-      }
-        .IC1 img,
-      .IC2 img,
-      .IC3 img,
-      .IC4 img,
-      .IC5 img,
-      .IC6 img{
-        width:15vw;
-        height: auto; /*of the logos themselves*/
-      }
-}
-
-@media (max-width: 1000px) {
-    .logo-container{
-        padding-top: 10vw;
-        height: 100vw;
-    }
-    .IC1,
-      .IC2,
-      .IC3,
-      .IC4,
-      .IC5,
-      .IC6 {
-        margin: -20vw; /*controls spacing among all logos*/
-      }
-    }
-
-    @media (max-width: 800px) {
-        .logo-container{
-            padding-top: 10vw;
-            height: 120vw;
-        }
-        .IC1,
-          .IC2,
-          .IC3,
-          .IC4,
-          .IC5,
-          .IC6 {
-            margin: -23vw; /*controls spacing among all logos*/
+          .IC1 img,
+          .IC2 img,
+          .IC4 img,
+          .IC5 img,
+          .IC6 img{
+            width:80px; /*100px*/
+            height: auto;
           }
-        }
-    
-    
+      }
