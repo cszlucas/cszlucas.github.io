@@ -1045,7 +1045,7 @@ p a {
 
     .paragraphs {
         margin-left: 11vw;
-        margin-top: 100px;
+        padding-top: 5%;
     }
     
     .paragraphs p {
@@ -1073,12 +1073,12 @@ p a {
     
     .client_circle { /*the circle*/
         background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-        width: 550px; /* Adjust the width to your desired dimensions */
-        height: 550px;
+        width: 450px; /* Adjust the width to your desired dimensions */
+        height: 450px;
         border-radius: 50%; /* Create a circular clipping effect */
         overflow: hidden;
         position: relative; /* Change to relative for normal document flow */
-        margin-top: -200px; /* Adjust margin as needed -100*/
+        margin-top: -10%; /* Adjust margin as needed -100*/
         margin-right: 10%; /* Center the container horizontally */
         margin-left: auto; /* Center the container horizontally */
         transition: all 0.3s;
@@ -1086,80 +1086,14 @@ p a {
     
     .client_image_container img {
         width: 100%; /* Make the image responsive */
-        margin-top: 55px;
+        margin-top: 10%;
         height: auto;
         transform: scaleY(1);
     }
 
     
-    @media screen and (max-width: 1500px) { /*still horizontal here*/
-        .client_circle {
-            max-width: 28vw; /* Set a maximum width for the circle */
-            margin-right: 5%; /* Center the container horizontally */
-            height: 28vw; /* Maintain aspect ratio */
-        }
-        .paragraphs {
-            text-align: left;
-        }
-    }
+    @media screen and (max-width: 1800px) { /*still horizontal here*/
 
-    @media screen and (max-width: 1000px) {
-        /* Adjust spacing and sizes for smaller screens */
-    
-        .paragraphs {
-            margin-top: 2vh;
-            margin-left: 0; /* Reset margin for smaller screens */
-        }
-
-        .home_intro h1{
-            padding-bottom: 3vw;
-            font-size: 4vw;
-            text-align: center;
-            margin-left: 0;
-        }
-
-        .client_name p, .client_des p {
-            text-align: center;
-            font-size: 3vw; /* Adjust the font size for smaller screens */
-            margin-left: 0;
-        }
-    
-        .client_image_container {
-            padding-top: 28vh; /*pads circle*/
-            padding-bottom: 4vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column; /* Stack the image on top of the text */
-            align-items: center;
-            justify-content: center;
-            height: auto; /* Allow container height to adjust as needed */
-        }
-    
-        .client_circle {
-            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-            width: 50%; /* Adjust the width to your desired dimensions */
-            max-width: 42vw; /* Set a maximum width for the circle */
-            height: 42vw; /* Maintain aspect ratio */
-            border-radius: 50%;
-            overflow: hidden;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: -20vh;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    
-        .client_image_container img {
-            max-width: 100%; /* Ensure the image doesn't exceed its container */
-            height: auto; /* Maintain the image's aspect ratio */
-        }
-    
-        .paragraphs {
-            text-align: center;
-        }
-    
         .paragraphs e1,
         .paragraphs e2,
         .paragraphs e3,
@@ -1167,17 +1101,76 @@ p a {
         .paragraphs e5 {
             font-family: Helvetica;
             font-style: italic;
-            font-size: 3vw;
-        }
-    
-        .read-more-button{
-            margin-left: 100px;
-        }
-        .read-more-button img{
-            width: 50px;
-            height: auto;
+            font-size: 25px;
         }
 
+        .client_circle { /*the circle*/
+            width: 350px; /* Adjust the width to your desired dimensions */
+            height: 350px;
+        }
+    }
+
+    @media screen and (max-width: 1200px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            font-family: Helvetica;
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        .paragraphs p{
+            line-height: .8;
+        }
+
+        .client_circle { /*the circle*/
+            width: 300px; /* Adjust the width to your desired dimensions */
+            height: 300px;
+            margin-top: -10%; 
+        }
+    }
+
+    @media screen and (max-width: 800px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            font-family: Helvetica;
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        .paragraphs p{
+            line-height: .5;
+        }
+
+        .client_circle { /*the circle*/
+            width: 30vw; /* Adjust the width to your desired dimensions */
+            height: 30vw;
+            margin-top: -10%; 
+        }
+    }
+
+    @media screen and (max-width: 800px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            font-family: Helvetica;
+            font-style: italic;
+            font-size: 8px;
+        }
+
+        .paragraphs p{
+            line-height: .3;
+        }
     }
 
     .initial {
@@ -1196,6 +1189,22 @@ p a {
         border: none;
         cursor: pointer;
         color: blue; /* Adjust color as needed */
+    }
+
+    .read-more-button img{
+        width:70%;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .read-more-button {
+            margin-top: -10px;
+            margin-left: -2vw;
+        }
+    
+        .read-more-button img{
+            width:50%;
+        }
+        
     }
 
 
