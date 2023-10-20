@@ -1335,7 +1335,7 @@ p a {
       .IC4,
       .IC5,
       .IC6 {
-        margin: 1vw 5vw; /*20px seperates each element*/
+        margin: 1vw 4vw; /*20px seperates each element*/
       }
         .IC3 img{
             width:60px;/*90px*/
