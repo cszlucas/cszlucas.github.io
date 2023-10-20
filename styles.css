@@ -1016,7 +1016,7 @@ p a {
     }
     
     .container_info {
-        padding: 20px;
+        padding: 40px;
         text-align: center;
     }
     
@@ -1110,7 +1110,7 @@ p a {
         }
     }
 
-    @media screen and (max-width: 1200px) { /*still horizontal here*/
+    @media screen and (max-width: 1300px) { /*still horizontal here*/
 
         .paragraphs e1,
         .paragraphs e2,
@@ -1156,7 +1156,7 @@ p a {
         }
     }
 
-    @media screen and (max-width: 800px) { /*still horizontal here*/
+    @media screen and (max-width: 600px) { /*still horizontal here*/
 
         .paragraphs e1,
         .paragraphs e2,
@@ -1165,11 +1165,11 @@ p a {
         .paragraphs e5 {
             font-family: Helvetica;
             font-style: italic;
-            font-size: 8px;
+            font-size: 6px;
         }
 
         .paragraphs p{
-            line-height: .3;
+            line-height: .6;
         }
     }
 
