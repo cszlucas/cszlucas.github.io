@@ -1007,14 +1007,14 @@ p a {
         transform: scaleY(0.8); /* Initial scale */
     
         /* Media query for smaller screens */
-      /*  @media screen and (max-width: 768px) {
-            transform: scaleY(1.2);  Make the image bigger for smaller screens 
+        @media screen and (max-width: 768px) {
+            transform: scaleY(1.2);  /*Make the image bigger for smaller screens */
         }
     
-         Media query for even smaller screens 
+         /*Media query for even smaller screens */
         @media screen and (max-width: 480px) {
-            transform: scaleY(1.5);  Make the image even bigger for even smaller screens 
-        }*/
+            transform: scaleY(1.5);  /*Make the image even bigger for even smaller screens */
+        }
     }
     .NP{
         position: absolute;
@@ -1034,13 +1034,9 @@ p a {
         text-align: center;
     }
     
-    /*.container_info {
+    .container_info {
         padding: 40px;
         text-align: center;
-    }*/
-
-    .home_intro{
-        padding-top:10%;
     }
     
     .home_intro h1,
