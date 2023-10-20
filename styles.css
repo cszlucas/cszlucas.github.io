@@ -338,7 +338,7 @@
 }
 
 .contact__content div { /*love to hear*/ /*make inner div the same size as outer div*/
-    font-family: "Helvetica", Arial;
+    font-family: "Helvetica Light", Arial;
     /*font-size: 120px;*/
     font-size: 5.5vw; /*allows responsive*/
     font-style: normal;
@@ -403,7 +403,7 @@
 .contact_name{
     font-size: 4.5vw;/*96px;*/
     margin: 100px auto; /*moves name down from contact details*/
-    font-family: "Helvetica", Cochin;
+    font-family: "Helvetica Light Oblique", Cochin;
     font-weight: 300;
     font-style: normal;
     color: #036080;
@@ -443,7 +443,7 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    font-family: "Helvetica", Cochin;
+    font-family: "Helvetica Light", Cochin;
     padding: 1vh 1vw; /* 20px makes space between pic and info horizontal;*/
     display: flex;
     align-items: center;
@@ -578,6 +578,10 @@
     font-style: normal;
 }
 
+.rect_1_num,.rect_2_num,.rect_3_num,.rect_4_num,.rect_5_num,.rect_6_num,.rect_7_num,.rect_8_num,.rect_9_num{
+    font-family: "Helvetica Light", Cochin;
+}
+
 .Emergency_text_box_orange{ /*detox programs*/
     height: 20vw;
     display: flex;
@@ -589,7 +593,7 @@
 .Emergency_text_box_orange h1{
    color: #FFF;
    font-size: 6vw;
-   font-family: "Cochin", Regular;
+   font-family: "Cochin", Arial;
    font-style: normal;
    font-weight: 500;
    line-height: normal;
@@ -614,6 +618,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.rect_10_num,.rect_11_num,.rect_12_num,.rect_13_num{
+    font-family: "Helvetica Light", Cochin;
 }
 
 @media (max-width: 968px) {
@@ -748,7 +756,7 @@
     font-size: 3.5vw;
     font-style: normal;
     margin-left: 11vw;
-    font-family: "Helvetica", Arial; 
+    font-family: "Helvetica Light", Arial; 
     font-weight: 300;
     line-height: normal;
     margin-bottom: 5%;
@@ -759,7 +767,7 @@
     font-size: 2vw;
     font-style: normal;
     margin-left: 11vw;
-    font-family: "Helvetica", Arial; 
+    font-family: "Helvetica Light", Arial; 
     font-weight: 300;
     line-height: normal;
     height: 10%;
@@ -897,7 +905,7 @@ p a {
     }
     
     .text-container .p2 { /* Matt Haig */
-        font-family: "Helvetica";
+        font-family: "Helvetica Light Oblique";
         font-size: 3vw; /* Adjust the font size as needed */
         font-style: italic;
         font-weight: 300;
@@ -932,15 +940,19 @@ p a {
         padding: 30px 100px; /*seperates word rows and moves away from left side some*/
     }
 
-    .row1,.row2,.row3,.row4,.row5,.row6{
+    .row1,.row2,.row3,.row4,.row5,.row6,.row11,.row22,.row33,.row44,.row55,.row66{
         color: #036080;
         font-size: 3.2vw; /*100px*/
         margin-left: 5vw;
         text-align: left;
-        font-family: "Helvetica", Cochin;
+        font-family: "Helvetica Light", Cochin;
         font-weight: 300;
         line-height: 1.2; /*adjust space between lines*/
         font-style: normal;
+    }
+
+    ,.row11,.row22,.row33,.row44,.row55,.row66{
+        font-family: "Helvetica Light Oblique";
     }
 
     @media screen and (max-width:850px) {
@@ -1034,21 +1046,23 @@ p a {
     .home_intro h1,
     .client_name p,
     .client_des p {
-        font-family: Helvetica;
         color: #036080;
         margin-left: 11vw;
     }
 
     .home_intro h1{ /*nice to meet you*/
+        font-family: "Helvetica Light";
         font-size: 3.2vw;
         padding-bottom: 3vw;
     }
     
     .client_name p {
+        font-family: "Helvetica";
         font-size: 3vw;
     }
     
     .client_des p {
+        font-family: "Helvetica Light Oblique";
         font-size: 3vw;
         font-style: normal;
     }
@@ -1061,8 +1075,8 @@ p a {
     
     .paragraphs p {
         color: #000;
-        font-family: Helvetica;
-        font-style: italic;
+        font-family: "Helvetica Light Oblique";
+        font-style: normal;
         font-size: 33px;
         font-weight: 300;
         line-height: normal;
@@ -1073,8 +1087,8 @@ p a {
     .paragraphs e3,
     .paragraphs e4,
     .paragraphs e5 {
-        font-family: Helvetica;
-        font-style: italic;
+        font-family: "Helvetica Light Oblique"
+        font-style: normal;
         font-size: 33px;
     }
 
@@ -1110,8 +1124,6 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: Helvetica;
-            font-style: italic;
             font-size: 25px;
         }
 
@@ -1128,8 +1140,6 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: Helvetica;
-            font-style: italic;
             font-size: 12px;
         }
 
@@ -1151,8 +1161,6 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: Helvetica;
-            font-style: italic;
             font-size: 12px;
         }
 
@@ -1174,8 +1182,6 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: Helvetica;
-            font-style: italic;
             font-size: 6px;
         }
 
