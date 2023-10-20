@@ -1245,8 +1245,9 @@ p a {
 
 
     .AI{ /*accepted insurances*/
+        position: relative;
         margin-top: 100px;
-        margin-bottom: 100px;
+        margin-bottom: 0px;
         background-color: #B5D0E0;
         height: 20vw;
     }
@@ -1258,7 +1259,7 @@ p a {
 
     .logo-container {
         max-width: 100%;
-        padding-top: 32%; /*dont know why but very important*/
+        padding-top: 10%; /*dont know why but very important*/
         padding-bottom: 5%;
         display: flex;
         flex-direction: column;
@@ -1295,7 +1296,7 @@ p a {
       }
 
       .IC3 img{
-        width:140px;/*90px*/
+        width:80px;/*90px*/
         height: auto;
       }
       .IC1 img,
@@ -1305,14 +1306,15 @@ p a {
       .IC6 img{
         width:160px; /*100px*/
         height: auto;
+        padding-bottom: 50%;
       }
 
       @media screen and (max-width: 1000px) {
         .logo-container{
-            padding-top: 40%;
+            padding-top: 0%;
         }
         .IC3 img{
-            width:80px;/*90px*/
+            width:60px;/*90px*/
             height: auto;
           }
           .IC1 img,
@@ -1325,9 +1327,9 @@ p a {
           }
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .logo-container{
-            padding-top: 48%;
+            padding-top: 0%;
         }
         .IC1,
       .IC2,
@@ -1338,7 +1340,7 @@ p a {
         margin: 1vw 4vw; /*20px seperates each element*/
       }
         .IC3 img{
-            width:60px;/*90px*/
+            width:40px;/*90px*/
             height: auto;
           }
           .IC1 img,
