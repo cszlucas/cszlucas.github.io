@@ -1093,7 +1093,7 @@ p a {
     }
 
     
-    @media screen and (max-width: 1800px) { /*still horizontal here*/
+    @media screen and (max-width: 1500px) { /*still horizontal here*/
         .client_circle {
             max-width: 28vw; /* Set a maximum width for the circle */
             margin-right: 5%; /* Center the container horizontally */
@@ -1104,7 +1104,7 @@ p a {
         }
     }
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1000px) {
         /* Adjust spacing and sizes for smaller screens */
     
         .paragraphs {
