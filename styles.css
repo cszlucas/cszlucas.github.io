@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Helvetica Light Oblique';
-  src: url('helvetica-light-oblique.ttf') format('truetype');
+  src: url('helvetica_light_oblique.ttf') format('truetype');
   /* Add more src formats for cross-browser compatibility if necessary */
 }
 
