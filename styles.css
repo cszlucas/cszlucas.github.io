@@ -3,10 +3,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica', 'Cochin', Arial;
+    font-family: 'Helvetica', 'Helvetica Light','Helvetica-Light-Oblique', 'Cochin', sans-serif;
     scroll-behavior: smooth;
 }
-
+@font-face {
+    font-family: 'Helvetica Light';
+    src:  local("Helvetica-Light"), local("Arial"), url(../fonts/Helvetica-Light-Font.woff) format("woff");
+}
+@font-face {
+    font-family: 'Helvetica-Light-Oblique';
+    src:  local("Helvetica-Ligh-Oblique"), local("Arial"), url(../fonts/Helvetica-Light-Oblique-Font.woff) format("woff");
+}
 @font-face {
     font-family: "Helvetica";
     src: local("Helvetica"), local("Arial"), url(../fonts/Helvetica-Font.woff) format("woff");
