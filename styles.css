@@ -907,7 +907,7 @@ p a {
     .text-container .p2 { /* Matt Haig */
         font-family: "Helvetica Light Oblique";
         font-size: 3vw; /* Adjust the font size as needed */
-        font-style: italic;
+        font-style: normal;
         font-weight: 300;
         line-height: 0%;
     }
@@ -1007,14 +1007,14 @@ p a {
         transform: scaleY(0.8); /* Initial scale */
     
         /* Media query for smaller screens */
-        @media screen and (max-width: 768px) {
-            transform: scaleY(1.2); /* Make the image bigger for smaller screens */
+      /*  @media screen and (max-width: 768px) {
+            transform: scaleY(1.2);  Make the image bigger for smaller screens 
         }
     
-        /* Media query for even smaller screens */
+         Media query for even smaller screens 
         @media screen and (max-width: 480px) {
-            transform: scaleY(1.5); /* Make the image even bigger for even smaller screens */
-        }
+            transform: scaleY(1.5);  Make the image even bigger for even smaller screens 
+        }*/
     }
     .NP{
         position: absolute;
@@ -1026,10 +1026,6 @@ p a {
     .NP h1{ /*NP psych on top of pic*/
         color: #036080;   
         font-family: Cochin;
-        font-size: 6vw; /*150px*/
-    }
-    
-    .NP h1 {
         margin-top: 8%; /* Adjust the top margin as needed */
         font-size: 4vw; /* Adjust the font size as needed */
     }
@@ -1038,9 +1034,13 @@ p a {
         text-align: center;
     }
     
-    .container_info {
+    /*.container_info {
         padding: 40px;
         text-align: center;
+    }*/
+
+    .home_intro{
+        padding-top:10%;
     }
     
     .home_intro h1,
@@ -1073,23 +1073,13 @@ p a {
         padding-top: 5%;
     }
     
-    .paragraphs p {
+    .paragraphs {
         color: #000;
         font-family: "Helvetica Light Oblique";
         font-style: normal;
         font-size: 33px;
         font-weight: 300;
         line-height: normal;
-    }
-    
-    .paragraphs e1,
-    .paragraphs e2,
-    .paragraphs e3,
-    .paragraphs e4,
-    .paragraphs e5 {
-        font-family: "Helvetica Light Oblique"
-        font-style: normal;
-        font-size: 33px;
     }
 
     .client_image_container{
@@ -1119,11 +1109,7 @@ p a {
     
     @media screen and (max-width: 1800px) { /*still horizontal here*/
 
-        .paragraphs e1,
-        .paragraphs e2,
-        .paragraphs e3,
-        .paragraphs e4,
-        .paragraphs e5 {
+        .paragraphs {
             font-size: 25px;
         }
 
@@ -1134,19 +1120,12 @@ p a {
     }
 
     @media screen and (max-width: 1300px) { /*still horizontal here*/
-
-        .paragraphs e1,
-        .paragraphs e2,
-        .paragraphs e3,
-        .paragraphs e4,
-        .paragraphs e5 {
+        
+        .paragraphs {
             font-size: 12px;
-        }
-
-        .paragraphs p{
             line-height: .8;
         }
-
+        
         .client_circle { /*the circle*/
             width: 300px; /* Adjust the width to your desired dimensions */
             height: 300px;
@@ -1155,16 +1134,9 @@ p a {
     }
 
     @media screen and (max-width: 800px) { /*still horizontal here*/
-
-        .paragraphs e1,
-        .paragraphs e2,
-        .paragraphs e3,
-        .paragraphs e4,
-        .paragraphs e5 {
+        
+        .paragraphs {
             font-size: 12px;
-        }
-
-        .paragraphs p{
             line-height: .5;
         }
 
@@ -1177,15 +1149,8 @@ p a {
 
     @media screen and (max-width: 600px) { /*still horizontal here*/
 
-        .paragraphs e1,
-        .paragraphs e2,
-        .paragraphs e3,
-        .paragraphs e4,
-        .paragraphs e5 {
+        .paragraphs {
             font-size: 6px;
-        }
-
-        .paragraphs p{
             line-height: .6;
         }
     }
@@ -1240,7 +1205,7 @@ p a {
         width:900px; /*200px*/
         border-radius: 60px;
         position:relative;
-        top:0%; /*100%*/
+       /* top:0%; 100%
         opacity:0;
         animation:load_up 4s forwards;
         -webkit-animation:load_up 4s forwards;
@@ -1254,13 +1219,7 @@ p a {
         from{opacity:0;right:0%}
         to{opacity:1;right:20%;}
     
-    }
-
-    @media screen and (max-width: 1800px) {
-        .hiddenPic img{
-            display: none; /* Hide the .hiddenPic at this screen width */
-        }
-    }
+    }*/
       
       .show-content {
         right: 0; /* Slide content inside the container (from left to right) */
