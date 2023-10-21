@@ -1006,6 +1006,16 @@ p a {
         transform: scaleY(0.8); /* Initial scale */
     
         /* Media query for smaller screens */
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            transform: scaleY(1.2); /* Make the image bigger for smaller screens */
+        }
+    
+        /* Media query for even smaller screens */
+        @media screen and (max-width: 480px) {
+            transform: scaleY(1.5); /* Make the image even bigger for even smaller screens */
+        }
+    }
     .NP{
         position: absolute;
         display: flex;
@@ -1077,7 +1087,12 @@ p a {
     }
     
     .client_circle { /*the circle*/
-        background: url(<path-to-image>) ECE1D6 50% / cover no-repeat;
+        background-image: url(<path-to-image>);
+        background-color: #ECE1D6;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
         width: 450px; /* Adjust the width to your desired dimensions */
         height: 450px;
         border-radius: 50%; /* Create a circular clipping effect */
@@ -1130,7 +1145,6 @@ p a {
         .client_circle { /*the circle*/
             width: 300px; /* Adjust the width to your desired dimensions */
             height: 300px;
-            margin-top: -10%; 
         }
     }
 
@@ -1149,8 +1163,6 @@ p a {
         .client_circle { /*the circle*/
             width: 30vw; /* Adjust the width to your desired dimensions */
             height: 30vw;
-            margin-top: -10%; 
- 
         }
     }
 
@@ -1161,9 +1173,21 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            line-height: .6;
+            line-height: normal;
             font-family: "Helvetica Light Oblique";
             font-size: 1.4vw;
+        }
+    }
+        @media screen and (max-width: 450px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.2vw;
         }
     }
 
