@@ -1012,7 +1012,7 @@ p a {
                 margin-bottom: 15%;
             }
             .NP{
-                margin-top:0%;
+                margin-top:9%;
             }
         }
     
@@ -1020,17 +1020,17 @@ p a {
         @media screen and (max-width: 480px) {
             transform: scaleY(1.5); /* Make the image even bigger for even smaller screens */
              .main_page_img img{
-                margin-bottom: 15%;
+                margin-bottom: 25%;
             }
             .NP{
-                margin-top:0%;
+                margin-top:11%;
             }
         }
     }
     .NP{
         position: absolute;
         display: flex;
-        margin-top:3%;/*140px*/
+        margin-top:5%;/*140px*/
         margin-left: 11vw;
     }
 
@@ -1049,7 +1049,7 @@ p a {
     }
     
     .main_page_img img{
-        margin-bottom: 4%;
+        margin-bottom: 3%;
     }
     
     .home_intro h1,
@@ -1062,7 +1062,7 @@ p a {
     .home_intro h1{ /*nice to meet you*/
         font-family: "Helvetica Light";
         font-size: 4.4vw;
-        padding-bottom: 4%;
+        padding-bottom: 3%;
     }
     
     .client_name p {
@@ -1079,7 +1079,7 @@ p a {
 
     .paragraphs {
         margin-left: 11vw;
-        padding-top: 4%;
+        padding-top: 3%;
     }
     
     .paragraphs e1,
@@ -1098,13 +1098,12 @@ p a {
     }
     
     .client_circle { /*the circle*/
-        background: url(<path-to-image>), ECE1D6 50% / cover no-repeat;
+        background: url(<path-to-image>) ECE1D6 50% / cover no-repeat;
         width: 450px; /* Adjust the width to your desired dimensions */
         height: 450px;
         border-radius: 50%; /* Create a circular clipping effect */
         overflow: hidden;
         position: relative; /* Change to relative for normal document flow */
-        margin-top: -10%; /* Adjust margin as needed -100*/
         margin-right: 10%; /* Center the container horizontally */
         margin-left: auto; /* Center the container horizontally */
         transition: all 0.3s;
@@ -1112,7 +1111,6 @@ p a {
     
     .client_image_container img {
         width: 100%; /* Make the image responsive */
-        margin-top: 10%;
         height: auto;
         transform: scaleY(1);
     }
@@ -1125,8 +1123,9 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
+            line-height: normal;
             font-family: "Helvetica Light Oblique";
-            font-size: 25px;
+            font-size: 1.7vw;
         }
 
         .client_circle { /*the circle*/
@@ -1142,11 +1141,9 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
+            line-height: normal;
             font-family: "Helvetica Light Oblique";
-            font-size: 1.8vw;
-        }
-        .paragraphs{
-            line-height: .6;
+            font-size: 1.6vw;
         }
         
         .client_circle { /*the circle*/
@@ -1163,18 +1160,15 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
+            line-height: normal;
             font-family: "Helvetica Light Oblique";
-            font-size: 1vw;
+            font-size: 1.5vw;
         }
 
         .client_circle { /*the circle*/
             width: 30vw; /* Adjust the width to your desired dimensions */
             height: 30vw;
-            margin-top: -10%; 
-        }
-
-        .NP{
-            margin-top: 9%;
+ 
         }
     }
 
@@ -1185,8 +1179,9 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
+            line-height: normal;
             font-family: "Helvetica Light Oblique";
-            font-size: 1.5vw;
+            font-size: 1.4vw;
         }
     }
 
