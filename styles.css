@@ -1011,6 +1011,9 @@ p a {
             .main_page_img img{
                 margin-bottom: 15%;
             }
+            .NP{
+                margin-top:0%;
+            }
         }
     
         /* Media query for even smaller screens */
@@ -1021,17 +1024,17 @@ p a {
     .NP{
         position: absolute;
         display: flex;
-        margin-top:6%;/*140px*/
+        margin-top:3%;/*140px*/
         margin-left: 11vw;
     }
 
     .NP h1{ /*NP psych on top of pic*/
         color: #036080;   
         font-family: Cochin;
-        font-size: 5.5vw; /*150px*/
+        font-size: 6vw; /*150px*/
     }
 
-    .h1{
+    h1{
         font-weight: normal;
     }
 
@@ -1052,7 +1055,7 @@ p a {
 
     .home_intro h1{ /*nice to meet you*/
         font-family: "Helvetica Light";
-        font-size: 4.3vw;
+        font-size: 5vw;
         padding-bottom: 5vw;
     }
     
@@ -1073,23 +1076,15 @@ p a {
         padding-top: 4%;
     }
     
-    .paragraphs p {
-        color: #000;
-        font-family: "Helvetica Light Oblique";
-        font-style: normal;
-        font-size: 33px;
-        font-weight: 300;
-        line-height: normal;
-    }
-    
     .paragraphs e1,
     .paragraphs e2,
     .paragraphs e3,
     .paragraphs e4,
     .paragraphs e5 {
+         color: #000;
         font-family: "Helvetica Light Oblique"
         font-style: normal;
-        font-size: 33px;
+        font-size: 1.8vw;
     }
 
     .client_image_container{
@@ -1163,7 +1158,7 @@ p a {
         .paragraphs e4,
         .paragraphs e5 {
             font-family: "Helvetica Light Oblique"
-            font-size: 12px;
+            font-size: 1vw;
         }
 
         .client_circle { /*the circle*/
@@ -1185,7 +1180,7 @@ p a {
         .paragraphs e4,
         .paragraphs e5 {
             font-family: "Helvetica Light Oblique"
-            font-size: 6px;
+            font-size: 1.5vw;
         }
     }
 
