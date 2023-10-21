@@ -1019,6 +1019,12 @@ p a {
         /* Media query for even smaller screens */
         @media screen and (max-width: 480px) {
             transform: scaleY(1.5); /* Make the image even bigger for even smaller screens */
+             .main_page_img img{
+                margin-bottom: 15%;
+            }
+            .NP{
+                margin-top:0%;
+            }
         }
     }
     .NP{
@@ -1031,7 +1037,7 @@ p a {
     .NP h1{ /*NP psych on top of pic*/
         color: #036080;   
         font-family: Cochin;
-        font-size: 6vw; /*150px*/
+        font-size: 5.5vw; /*150px*/
     }
 
     h1{
@@ -1043,7 +1049,7 @@ p a {
     }
     
     .main_page_img img{
-        margin-bottom: 5%;
+        margin-bottom: 4%;
     }
     
     .home_intro h1,
@@ -1055,18 +1061,18 @@ p a {
 
     .home_intro h1{ /*nice to meet you*/
         font-family: "Helvetica Light";
-        font-size: 5vw;
-        padding-bottom: 5vw;
+        font-size: 4.4vw;
+        padding-bottom: 4%;
     }
     
     .client_name p {
         font-family: "Helvetica";
-        font-size: 2.5vw;
+        font-size: 2.2vw;
     }
     
     .client_des p {
         font-family: "Helvetica Light Oblique";
-        font-size: 2.5vw;
+        font-size: 2.2vw;
         font-style: normal;
     }
     
@@ -1081,8 +1087,8 @@ p a {
     .paragraphs e3,
     .paragraphs e4,
     .paragraphs e5 {
-         color: #000;
-        font-family: "Helvetica Light Oblique"
+        color: #000;
+        font-family: "Helvetica Light Oblique";
         font-style: normal;
         font-size: 1.8vw;
     }
@@ -1119,7 +1125,7 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: "Helvetica Light Oblique"
+            font-family: "Helvetica Light Oblique";
             font-size: 25px;
         }
 
@@ -1136,7 +1142,7 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: "Helvetica Light Oblique"
+            font-family: "Helvetica Light Oblique";
             font-size: 1.8vw;
         }
         .paragraphs{
@@ -1157,7 +1163,7 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: "Helvetica Light Oblique"
+            font-family: "Helvetica Light Oblique";
             font-size: 1vw;
         }
 
@@ -1179,7 +1185,7 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-family: "Helvetica Light Oblique"
+            font-family: "Helvetica Light Oblique";
             font-size: 1.5vw;
         }
     }
@@ -1266,7 +1272,7 @@ p a {
 
     .AI{ /*accepted insurances*/
         position: relative;
-        margin-top: 100px;
+        margin-top: 5%;
         margin-bottom: 0px;
         background-color: #B5D0E0;
         height: 20vw;
