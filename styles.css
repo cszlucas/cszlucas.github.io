@@ -1008,6 +1008,9 @@ p a {
         /* Media query for smaller screens */
         @media screen and (max-width: 768px) {
             transform: scaleY(1.2); /* Make the image bigger for smaller screens */
+            .main_page_img img{
+                margin-bottom: 15%;
+            }
         }
     
         /* Media query for even smaller screens */
@@ -1018,28 +1021,26 @@ p a {
     .NP{
         position: absolute;
         display: flex;
-        margin-top:8%;/*140px*/
+        margin-top:6%;/*140px*/
         margin-left: 11vw;
     }
 
     .NP h1{ /*NP psych on top of pic*/
         color: #036080;   
         font-family: Cochin;
-        font-size: 6vw; /*150px*/
+        font-size: 5.5vw; /*150px*/
     }
-    
-    .NP h1 {
-        margin-top: 8%; /* Adjust the top margin as needed */
-        font-size: 4vw; /* Adjust the font size as needed */
+
+    .h1{
+        font-weight: normal;
     }
 
     .contact_content {
         text-align: center;
     }
     
-    .container_info {
-        padding: 40px;
-        text-align: center;
+    .main_page_img img{
+        margin-bottom: 5%;
     }
     
     .home_intro h1,
@@ -1051,25 +1052,25 @@ p a {
 
     .home_intro h1{ /*nice to meet you*/
         font-family: "Helvetica Light";
-        font-size: 3.2vw;
-        padding-bottom: 3vw;
+        font-size: 4.3vw;
+        padding-bottom: 5vw;
     }
     
     .client_name p {
         font-family: "Helvetica";
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
     
     .client_des p {
         font-family: "Helvetica Light Oblique";
-        font-size: 3vw;
+        font-size: 2.5vw;
         font-style: normal;
     }
     
 
     .paragraphs {
         margin-left: 11vw;
-        padding-top: 5%;
+        padding-top: 4%;
     }
     
     .paragraphs p {
@@ -1096,7 +1097,7 @@ p a {
     }
     
     .client_circle { /*the circle*/
-        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+        background: url(<path-to-image>), ECE1D6 50% / cover no-repeat;
         width: 450px; /* Adjust the width to your desired dimensions */
         height: 450px;
         border-radius: 50%; /* Create a circular clipping effect */
@@ -1123,6 +1124,7 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
+            font-family: "Helvetica Light Oblique"
             font-size: 25px;
         }
 
@@ -1139,13 +1141,13 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
-            font-size: 12px;
+            font-family: "Helvetica Light Oblique"
+            font-size: 1.8vw;
         }
-
-        .paragraphs p{
-            line-height: .8;
+        .paragraphs{
+            line-height: .6;
         }
-
+        
         .client_circle { /*the circle*/
             width: 300px; /* Adjust the width to your desired dimensions */
             height: 300px;
@@ -1153,24 +1155,25 @@ p a {
         }
     }
 
-    @media screen and (max-width: 800px) { /*still horizontal here*/
+    @media screen and (max-width: 1000px) { /*still horizontal here*/
 
         .paragraphs e1,
         .paragraphs e2,
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
+            font-family: "Helvetica Light Oblique"
             font-size: 12px;
-        }
-
-        .paragraphs p{
-            line-height: .5;
         }
 
         .client_circle { /*the circle*/
             width: 30vw; /* Adjust the width to your desired dimensions */
             height: 30vw;
             margin-top: -10%; 
+        }
+
+        .NP{
+            margin-top: 9%;
         }
     }
 
@@ -1181,11 +1184,8 @@ p a {
         .paragraphs e3,
         .paragraphs e4,
         .paragraphs e5 {
+            font-family: "Helvetica Light Oblique"
             font-size: 6px;
-        }
-
-        .paragraphs p{
-            line-height: .6;
         }
     }
 
