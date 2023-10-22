@@ -1136,6 +1136,42 @@ p a {
             height: 350px;
         }
     }
+ @media screen and (max-width: 1300px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.6vw;
+        }
+
+        .client_circle { /*the circle*/
+            width: 300px; /* Adjust the width to your desired dimensions */
+            height: 300px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.5vw;
+        }
+
+        .client_circle { /*the circle*/
+            width: 30vw; /* Adjust the width to your desired dimensions */
+            height: 30vw;
+        }
+    }
+    }
 
     .initial {
         margin: 0;
