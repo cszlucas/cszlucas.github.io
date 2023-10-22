@@ -1232,45 +1232,20 @@ p a {
         
     }
 
- .client_circle { /*the circle*/
-        background-image: url(<path-to-image>);
-        background-color: #ECE1D6;
-        background-position: 50% 50%;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        width: 450px; /* Adjust the width to your desired dimensions */
-        height: 450px;
-        border-radius: 50%; /* Create a circular clipping effect */
-        overflow: hidden;
-        position: relative; /* Change to relative for normal document flow */
-        margin-top: -10%; /* Adjust margin as needed -100*/
-        margin-right: 10%; /* Center the container horizontally */
-        margin-left: auto; /* Center the container horizontally */
-        transition: all 0.3s;
-    }
-    
-    .client_image_container img {
-        width: 100%; /* Make the image responsive */
-        margin-top: 10%;
-        height: auto;
-        transform: scaleY(1);
-    }
-
-
     .hiddenPic {
+        padding-right: 1vw;
         overflow: hidden;
-        position: relative; /* Change to relative for normal document flow */
-        margin-top: -20%; /* Adjust margin as needed -100*/
-        margin-right: 10%; /* Center the container horizontally */
-        margin-left: auto; /* Center the container horizontally */
+        position: absolute; /* Change to relative for normal document flow */
+        left: 60vw;
+        bottom: 5%;
     }
 
     .hiddenPic img{ /*the sliding animation*/
-        width: 100%; /* Make the image responsive */
-        margin-top: 10%;
-        height: auto;
-        transform: scaleY(1);
+        max-width: 100%;
+        width: 500px; /* Make the image responsive */
+        opacity: 1;
+        position: relative;
+        border-radius: 60px;
     }
 
 
@@ -1279,10 +1254,6 @@ p a {
             display: none; /* Hide the .hiddenPic at this screen width */
         }
     }
-      .hidden-content {
-        display: none;
-      }
-
 
     .AI{ /*accepted insurances*/
         position: relative;
