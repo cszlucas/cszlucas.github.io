@@ -983,7 +983,7 @@ p a {
         .row6{
             margin-bottom: -40vw;
         }
-        .row1,.row2,.row3,.row4,.row5,.row6{
+        .row1,.row2,.row3,.row4,.row5,.row6, .offered_row_list .row1 p .row11, .offered_row_list .row4 p .row44{
         margin-left: -20px;
         font-size: 5vw;
         }
