@@ -1234,7 +1234,6 @@ p a {
 
     .hiddenPic {
         padding-right: 1vw;
-        overflow: hidden;
         position: absolute; /* Change to relative for normal document flow */
         left: 60vw;
         bottom: 5%;
