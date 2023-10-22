@@ -1136,7 +1136,8 @@ p a {
             height: 350px;
         }
     }
- @media screen and (max-width: 1300px) { /*still horizontal here*/
+ 
+@media screen and (max-width: 1300px) { /*still horizontal here*/
 
         .paragraphs e1,
         .paragraphs e2,
@@ -1171,6 +1172,22 @@ p a {
             height: 30vw;
         }
     }
+
+    @media screen and (max-width: 600px) { /*still horizontal here*/
+
+        .paragraphs {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.7vw;
+        }
+    }
+        @media screen and (max-width: 450px) { /*still horizontal here*/
+
+        .paragraphs {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.5vw;
+        }
     }
 
     .initial {
