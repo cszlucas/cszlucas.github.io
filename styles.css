@@ -1232,47 +1232,53 @@ p a {
         
     }
 
+ .client_circle { /*the circle*/
+        background-image: url(<path-to-image>);
+        background-color: #ECE1D6;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: 450px; /* Adjust the width to your desired dimensions */
+        height: 450px;
+        border-radius: 50%; /* Create a circular clipping effect */
+        overflow: hidden;
+        position: relative; /* Change to relative for normal document flow */
+        margin-top: -10%; /* Adjust margin as needed -100*/
+        margin-right: 10%; /* Center the container horizontally */
+        margin-left: auto; /* Center the container horizontally */
+        transition: all 0.3s;
+    }
+    
+    .client_image_container img {
+        width: 100%; /* Make the image responsive */
+        margin-top: 10%;
+        height: auto;
+        transform: scaleY(1);
+    }
+
 
     .hiddenPic {
-        padding: 0px 0px 10% 71px;
-        gap: 71px; 
-        position: absolute;
-        display: flex;
-        bottom: 10%; /* moves lsiding pic closer to author pic */
-        left: 1200px; /* Adjust the left position as needed */
-        /* Ensure the image doesn't exceed the screen width */
+        overflow: hidden;
+        position: relative; /* Change to relative for normal document flow */
+        margin-top: -20%; /* Adjust margin as needed -100*/
+        margin-right: 10%; /* Center the container horizontally */
+        margin-left: auto; /* Center the container horizontally */
     }
 
     .hiddenPic img{ /*the sliding animation*/
-        max-width: 100%;
-        width:900px; /*200px*/
-        border-radius: 60px;
-        position:relative;
-        top:0%; /*100%*/
-        opacity:0;
-        animation:load_up 4s forwards;
-        -webkit-animation:load_up 4s forwards;
+        width: 100%; /* Make the image responsive */
+        margin-top: 10%;
+        height: auto;
+        transform: scaleY(1);
     }
 
-    @keyframes load_up{
-        from{opacity:0;right:0%}
-        to{opacity:1;right:20%;}
-    
-    }@-webkit-keyframes load_up{
-        from{opacity:0;right:0%}
-        to{opacity:1;right:20%;}
-    
-    }
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1000px) {
         .hiddenPic img{
             display: none; /* Hide the .hiddenPic at this screen width */
         }
     }
-      
-      .show-content {
-        right: 0; /* Slide content inside the container (from left to right) */
-      }
       .hidden-content {
         display: none;
       }
