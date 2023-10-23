@@ -1197,14 +1197,14 @@ p a {
     .hidden {
         display: none;
         margin: 0;
-        padding-bottom: 2%;
+        padding-bottom: 1%;
     }
     
     .read-more-button {
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
-        margin-top: 10px;
+        margin-top: .2%;
         background: none;
         border: none;
         cursor: pointer;
