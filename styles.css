@@ -398,11 +398,13 @@
     text-align: left;
     padding-bottom: 10vw;
 }
+.contact_name p{
+    font-family: "Helvetica Light Oblique", Cochin;
+}
 
 .contact_name{
-    font-size: 4.5vw;/*96px;*/
+    font-size: 4.8vw;/*96px;*/
     margin: 100px auto; /*moves name down from contact details*/
-    font-family: "Helvetica Light Oblique", Cochin;
     font-weight: 300;
     font-style: normal;
     color: #036080;
@@ -442,12 +444,15 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    font-family: "Helvetica Light", Cochin;
     padding: 1vh 1vw; /* 20px makes space between pic and info horizontal;*/
     display: flex;
     align-items: center;
     /*margin-left or top: 2vw; 80px makes space between pic and info*/
     white-space: nowrap;
+}
+
+.phone_number p, .email p, .address p{
+    font-family: "Helvetica Light", Cochin;
 }
 
 .contact .phone_number , .contact .email a, .contact .address  {
@@ -464,7 +469,7 @@
         margin-bottom: 5vw;
     }
     .row {
-        padding-left: 10vw;
+        padding-left: 11vw;
     }
 
     .phone_number,
@@ -950,14 +955,7 @@ p a {
         font-style: normal;
     }
 
-    .offered_row_list .row1 p .row11, .offered_row_list .row4 p .row44{
-        color: #036080;
-        font-size: 3.2vw; /*100px*/
-        margin-left: 5vw;
-        text-align: left;
-        font-weight: 300;
-        line-height: normal; /*adjust space between lines*/
-        font-style: normal;
+    p2.innerRow1, p2.innerRow4{
         font-family: "Helvetica Light Oblique";
     }
 
@@ -983,7 +981,7 @@ p a {
         .row6{
             margin-bottom: -40vw;
         }
-        .row1,.row2,.row3,.row4,.row5,.row6, .offered_row_list .row1 p .row11, .offered_row_list .row4 p .row44{
+        .row1,.row2,.row3,.row4,.row5,.row6{
         margin-left: -20px;
         font-size: 5vw;
         }
