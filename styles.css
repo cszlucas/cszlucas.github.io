@@ -403,7 +403,7 @@
 }
 
 .contact_name{
-    font-size: 4.8vw;/*96px;*/
+    font-size: 4.5vw;/*96px;*/
     margin: 100px auto; /*moves name down from contact details*/
     font-weight: 300;
     font-style: normal;
@@ -469,7 +469,7 @@
         margin-bottom: 5vw;
     }
     .row {
-        padding-left: 11vw;
+        padding-left: 10vw;
     }
 
     .phone_number,
@@ -956,6 +956,13 @@ p a {
     }
 
     p2.innerRow1, p2.innerRow4{
+         color: #036080;
+        font-size: 3.2vw; /*100px*/
+        margin-left: 5vw;
+        text-align: left;
+        font-weight: 300;
+        line-height: normal; /*adjust space between lines*/
+        font-style: normal;
         font-family: "Helvetica Light Oblique";
     }
 
