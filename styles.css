@@ -32,7 +32,7 @@
     background: #036080;
     height:180px;
     display: flex;
-    position: relative; /*allows bar to remain visible when scrolling sticky*/
+    position: sticky; /*allows bar to remain visible when scrolling sticky*/
     top:0;
     justify-content: space-between;
     align-items: center;
@@ -495,7 +495,7 @@
 }
 @media (max-width: 600px) {
     .row {
-        padding-left: 10vw;
+        padding-left: 12vw;
     }
 }
 
@@ -779,6 +779,7 @@
     font-style: normal;
     margin-left: 11vw;
     font-family: "Helvetica Light", Arial; 
+    text-decoration: none;
     font-weight: 300;
     line-height: normal;
     height: 10%;
@@ -787,7 +788,7 @@
 }
 
 p a {
-    font-family: "Helvetica Light"
+    font-family: "Helvetica Light";
     text-decoration: none; /* Remove underlines from links */
     color:  #036080; /* Set the link color */
   }
@@ -962,17 +963,10 @@ p a {
         line-height: normal; /*adjust space between lines*/
         font-style: normal;
     }
-
-    p2.innerRow1, p2.innerRow4{
-         color: #036080;
-        font-size: 3.2vw; /*100px*/
-        margin-left: 5vw;
-        text-align: left;
-        font-weight: 300;
-        line-height: normal; /*adjust space between lines*/
-        font-style: normal;
+    p.slanted{
         font-family: "Helvetica Light Oblique";
     }
+
 
     @media screen and (max-width:850px) {
         .text-container{
