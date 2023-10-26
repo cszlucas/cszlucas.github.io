@@ -933,13 +933,13 @@ p a {
 
     .services_offered{
         background-color: #FFFFFF;
-        height: 350px;
+        height: 20vw;
     }
 
     .services_offered h1{
         color: #036080;
         font-family: "Cochin", Arial;
-        font-size: 4vw; /*150px*/
+        font-size: 6vw; /*150px*/
         font-style: normal;
         font-weight: 500;
         line-height: normal;
@@ -982,7 +982,7 @@ p a {
             height: 20vh;
         }
         .services_offered h1{
-            font-size: 5vw;
+            font-size: 6vw;
         }
         .row6{
             margin-bottom: -40vw;
