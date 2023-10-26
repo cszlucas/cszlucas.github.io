@@ -1087,7 +1087,7 @@ p a {
 
     .paragraphs {
         margin-left: 11vw;
-        padding-top: 3%;
+        padding-top: 4.5%;
     }
     
     .paragraphs e1,
@@ -1144,6 +1144,7 @@ p a {
         }
 
         .client_circle { /*the circle*/
+            margin-top: -10%;
             width: 350px; /* Adjust the width to your desired dimensions */
             height: 350px;
         }
@@ -1180,6 +1181,7 @@ p a {
         }
 
         .client_circle { /*the circle*/
+            margin-top: -10%;
             width: 30vw; /* Adjust the width to your desired dimensions */
             height: 30vw;
         }
@@ -1252,7 +1254,7 @@ p a {
 
     .AI{ /*accepted insurances*/
         position: relative;
-        margin-top: 5%;
+        margin-top: 6.5%;
         margin-bottom: 0px;
         background-color: #B5D0E0;
         height: 20vw;
