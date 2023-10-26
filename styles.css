@@ -1188,6 +1188,11 @@ p a {
     }
 
     @media screen and (max-width: 600px) { /*still horizontal here*/
+        .client_circle { /*the circle*/
+            margin-top: -12%;
+            width: 28vw; /* Adjust the width to your desired dimensions */
+            height: 28vw;
+        }
 
         .paragraphs {
             line-height: normal;
