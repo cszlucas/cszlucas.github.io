@@ -490,7 +490,7 @@
     .phone_logo img,
     .email_logo img,
     .address_logo img {
-        max-width: 60px; /* Adjust size for smaller screens */
+        max-width: 70px; /* Adjust size for smaller screens */
     }
 }
 @media (max-width: 600px) {
@@ -961,7 +961,6 @@ p a {
     .row1 p,.row2 p,.row3 p,.row4 p,.row5 p,.row6 p{
         color: #036080;
         font-size: 3.2vw; /*100px*/
-        margin-left: 5vw;
         text-align: left;
         font-family: "Helvetica Light", Cochin;
         font-weight: 300;
@@ -1002,8 +1001,11 @@ p a {
     }
   @media screen and (max-width:850px) {
        .row1,.row2,.row3,.row4,.row5,.row6{
-           font-size: 4vw;
+           font-size: 5vw;
        }
+      .offered_row_list{
+          padding: 30px 10%;
+      }
   }
 
     .row1{
