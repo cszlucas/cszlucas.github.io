@@ -490,12 +490,17 @@
     .phone_logo img,
     .email_logo img,
     .address_logo img {
-        max-width: 70px; /* Adjust size for smaller screens */
+        max-width: 60px; /* Adjust size for smaller screens */
     }
 }
 @media (max-width: 600px) {
+    .phone_logo img,
+    .email_logo img,
+    .address_logo img {
+        max-width: 40px; /* Adjust size for smaller screens */
+    }
     .row {
-        padding-left: 12vw;
+        padding-left: 15vw;
     }
 }
 
@@ -995,6 +1000,11 @@ p a {
         font-size: 5vw;
         }
     }
+  @media screen and (max-width:850px) {
+       .row1,.row2,.row3,.row4,.row5,.row6{
+           font-size: 4vw;
+       }
+  }
 
     .row1{
         padding-top: 180px; /*180px*/
@@ -1171,7 +1181,7 @@ p a {
         .paragraphs e5 {
             line-height: normal;
             font-family: "Helvetica Light Oblique";
-            font-size: 1.5vw;
+            font-size: 1.8vw;
         }
 
         .client_circle { /*the circle*/
