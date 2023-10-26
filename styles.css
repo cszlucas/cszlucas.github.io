@@ -396,7 +396,7 @@
     flex-direction: column; /*makes it like a list*/
     align-items: left;
     text-align: left;
-    padding-bottom: 10vw;
+    padding-bottom: 5%;
 }
 .contact_name p{
     font-family: "Helvetica Light Oblique", Cochin;
@@ -411,7 +411,7 @@
     text-align: center;
     line-height: normal;
     max-width: 90%;
-    padding-bottom: 0px;
+    padding-bottom: 2%;
 }
 
 .row{
@@ -419,7 +419,7 @@
     flex-wrap: wrap;
     /*justify-content: space-between;*/
     align-items: center; /*keeps text in line with pic*/
-    margin: 0px 0 2.5vh; /*how separated the rows are*/
+    margin: 0px 0 4vw; /*how separated the rows are*/
     padding-left: 20vw; /*100px moves logo pics away from left side some*/
     padding-right: 5%;
 }
@@ -457,6 +457,8 @@
 
 .contact .phone_number , .contact .email a, .contact .address  {
     color: #036080; /* Change to your desired color */
+    text-decoration: none;
+    font-family: "Helvetica Light";
 }
 
 /* Media query for smaller screens */
@@ -469,7 +471,7 @@
         margin-bottom: 5vw;
     }
     .row {
-        padding-left: 10vw;
+        padding-left: 17vw;
     }
 
     .phone_number,
@@ -489,6 +491,11 @@
     .email_logo img,
     .address_logo img {
         max-width: 70px; /* Adjust size for smaller screens */
+    }
+}
+@media (max-width: 600px) {
+    .row {
+        padding-left: 10vw;
     }
 }
 
@@ -582,7 +589,7 @@
     font-style: normal;
 }
 
-.rect_1_num,.rect_2_num,.rect_3_num,.rect_4_num,.rect_5_num,.rect_6_num,.rect_7_num,.rect_8_num,.rect_9_num{
+.rect_1_num p,.rect_2_num p,.rect_3_num p,.rect_4_num p,.rect_5_num p,.rect_6_num p,.rect_7_num p,.rect_8_num p,.rect_9_num p{
     font-family: "Helvetica Light", Cochin;
 }
 
@@ -624,7 +631,7 @@
     line-height: normal;
 }
 
-.rect_10_num,.rect_11_num,.rect_12_num,.rect_13_num{
+.rect_10_num p,.rect_11_num p,.rect_12_num p,.rect_13_num p{
     font-family: "Helvetica Light", Cochin;
 }
 
@@ -668,6 +675,7 @@
     }
 }
   p a1 {
+    font-family: "Helvetica Light";
     text-decoration: none; /* Remove underlines from links */
     color: #000; /* Set the link color */
   }
@@ -763,7 +771,6 @@
     font-family: "Helvetica Light", Arial; 
     font-weight: 300;
     line-height: normal;
-    margin-bottom: 5%;
 }
 
 .check_out_info_container p{ /* @hamptons text*/
@@ -780,6 +787,7 @@
 }
 
 p a {
+    font-family: "Helvetica Light"
     text-decoration: none; /* Remove underlines from links */
     color:  #036080; /* Set the link color */
   }
