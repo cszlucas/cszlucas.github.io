@@ -679,15 +679,10 @@
         height: 22vw;
     }
 }
-  p a1 {
+  .black_link {
     font-family: "Helvetica Light";
     text-decoration: none; /* Remove underlines from links */
     color: #000; /* Set the link color */
-  }
-  
-  /* Style the link on hover */
-  p a1:hover {
-    text-decoration: none; /* Underline the link on hover */
   }
 
 .footer_orange_container{
