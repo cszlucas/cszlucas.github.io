@@ -1,0 +1,1369 @@
+*{ /*sets the website border and font*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', 'Helvetica Light','Helvetica Light Oblique', 'Cochin', sans-serif;
+    scroll-behavior: smooth;
+}
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('Helvetica-Light.ttf') format('truetype');
+  /* Add more src formats for cross-browser compatibility if necessary */
+}
+
+@font-face {
+  font-family: 'Helvetica Light Oblique';
+  src: url('helvetica_light_oblique.ttf') format('truetype');
+  /* Add more src formats for cross-browser compatibility if necessary */
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: local("Helvetica"), local("Arial"), url(../fonts/Helvetica-Font.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Cochin";
+    src: local("Cochin"), local("Times New Roman"), url(../fonts/Cochin-Font.woff) format("woff");
+  }
+
+.navbar { /*top bar (color, size, layout, where words are put in box
+    ,size of words classified as part of navbar section, ability to slide) */
+    background: #036080;
+    height:180px;
+    display: flex;
+    position: sticky; /*allows bar to remain visible when scrolling sticky*/
+    top:0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 999; /*ensures overlap priority*/
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar{
+        height: 12vw;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo img{
+       width:40%; 
+       height: auto;
+    }
+}
+
+.navbar__container { 
+    display: flex; /*allows me to control spacing of child elements*/
+    justify-content:center; /*aligns the child elements*/
+    height: 80px; /*the latitude of navbar_container not logo*/
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 0px;
+    /*width: 143.26px;
+    height: 76.65px;
+    flex-shrink: 0;*/
+}
+
+/*#navbar__logo{
+    color: white;
+    background-size: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items:center; controls logos latitude
+    cursor: pointer; allows cursor over words
+    text-decoration: none;
+    font-size: 2rem;
+}*/
+
+.navbar__menu{ /*this is the vertical menu displayed when 3 bars clicked on*/
+    display: inline-flex;
+    padding: 0px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 50%;
+    position: absolute; /*places box relative to other items*/
+    right: 5%; /*moves box left some*/
+    list-style: none;
+    
+
+    top: -1000px; /*ensures animation from top never seen until clicked on*/
+    opacity: 1;
+    transition: all 0.5s ease;
+    height: 50vh;
+    z-index: -1; /*ensures we have to click on icon to trigger this animation*/
+}
+.navbar__item{ /*controls words in box spacing*/
+    height: 80px;
+    width: 100%;
+}
+
+.navbar__menu.active{ /*the javascript that triggers this*/
+    background: white;
+    top: 100%;
+    opacity: 1;
+    z-index: 99;
+    height:500px; /*the animation menu background*/
+    font-size: 1.6rem;
+    margin-top: 0px; /*makes sure white doesnt overlap blue bar*/
+    padding-top: 0vw;
+}
+
+.navbar__toggle .bar{ /*the hammer bars 3 by 25*/ 
+    width: 85px;
+    height: 4px;
+    margin: 15px 60px;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    margin-bottom: 10px; /*spreads out line height between bars*/
+}
+
+.navbar__links{
+    height: 122px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    display: table;
+    color: #036080;
+    text-decoration: underline;
+    margin-top: 0px;
+    padding-top:10px;
+    color: #036080;
+    font-family: "Cochin";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#mobile-menu{
+    position:absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+}
+.navbar__toggle .bar{
+    display: block;
+    cursor: pointer;
+}
+
+
+.navbar__links:hover{ /*links except sign up*/
+    /*color:#abbe1a; when hovered over*/
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1060px) { /*picked 960 b/c thats where issues with design started*/
+    .navbar__container{
+        display: flex; /*allows me to control spacing of child elements*/
+        justify-content:center; /*aligns the child elements*/
+        height: 90px; /*the latitude of navbar_container not logo*/
+        z-index: 1;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .navbar__menu{ /*this is the white vertical display when 3 bars clicked on*/
+        display: inline-flex;
+        padding: 10vw 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 50%;
+        position: absolute;
+        right: 5%; /* Use a percentage value for responsive positioning */
+        list-style: none;
+
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+
+    .navbar__menu.active {
+        background: white;
+        top: 100%;
+        opacity: 1;
+        z-index: 999; /* Set a high z-index value to ensure it's on top */
+        height: 500px;
+        font-size: 1.2vw;
+        flex-direction: inline;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw; /*seperates column of words gap vertical*/
+        width: 70%; /* Use a percentage value for responsiveness */
+        max-width: 700px; /* Set a maximum width for larger screens */
+        position: absolute;
+        right: 5%; /* Use a percentage value for responsive positioning */
+        list-style: none;
+        padding-left: 0%; /* Use a percentage value for responsive padding */
+    }
+    
+    .navbar__links{
+        height: 0px;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        display: table;
+        color: #036080;
+        text-decoration: underline;
+        padding-top: 50px; /*15px*/
+        color: #036080;
+        font-family: "Cochin";
+        font-size: 4vw; /*48px*/
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: -50px;
+    }
+    #mobile-menu{
+        position:absolute;
+        top: 20%;
+        right: 0%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__item{
+        width: 100%;
+    }
+
+    .navbar__btn{
+        padding-bottom: 2rem;
+    }
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar__toggle .bar{ /*the hamburger bars 3 by 25*/ 
+        display: flex;
+        align-content: center;
+        width: 40px;
+        height: 2px;
+        margin: 0px 60px;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+        margin-bottom: 5%; /*spreads out line height between bars*/
+    }
+    .navbar__links{
+        padding-top: 30px;
+    }
+}
+
+/* styles.css */
+.main {
+    background-color: #f5f5f5; /* Set a background color for the main section */
+    padding: 0px 0px; /* Add padding to the top/bottom and sides for spacing */
+}
+
+.main__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.main__content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 99;
+    opacity: 100;
+    color: rgb(22, 74, 87);
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+.main__img--container {
+    margin-top: 0px;
+    position: relative;
+}
+
+#main__img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact{
+    background-color: #ffffff;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact__content{ /*hear from you container*/
+    height: 20vw;
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    text-align: center;
+    position: relative;
+}
+
+.contact__content div { /*love to hear*/ /*make inner div the same size as outer div*/
+    font-family: "Helvetica Light", Arial;
+    /*font-size: 120px;*/
+    font-size: 5.5vw; /*allows responsive*/
+    font-style: normal;
+    font-stretch: ultra-condensed;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    z-index: 99;
+    opacity: 100;
+    color: #036080;
+    white-space: nowrap; /*stop text from wrapping*/
+    max-width: 90%;
+}
+
+.contact__img--container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.contact__img--container img{
+    width: 100%;
+    height: 20%;
+    /*object-fit: cover;*/
+    object-fit: fill;
+    max-height: 90vh
+  }
+
+.after_contact_container{ /*its the Contact Details box*/
+    width: 100%;
+    height: 20vw; /* Set the desired height 462px */
+    padding: 15px 0;
+    /*border: 1px solid #000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+    background: linear-gradient(180deg, rgba(223, 234, 240, 0.80) 0%, rgba(223, 234, 240, 0.00) 100%);
+}
+
+.after_contact_container h1{ /*says... Contact Details*/
+    color: #036080;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Cochin;
+    /*font-size: 128px;*/
+    font-size: 6vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 110px auto 180px; /*centers text contact details vertically and creates space */
+    text-align: center;
+    white-space: nowrap;
+    max-width: 90%;
+}
+
+.contact_info { /*contact container*/
+    display: flex;
+    flex-direction: column; /*makes it like a list*/
+    align-items: left;
+    text-align: left;
+    padding-bottom: 5%;
+}
+.contact_name p{
+    font-family: "Helvetica Light Oblique", Cochin;
+}
+
+.contact_name{
+    font-size: 4.5vw;/*96px;*/
+    margin: 100px auto; /*moves name down from contact details*/
+    font-weight: 300;
+    font-style: normal;
+    color: #036080;
+    text-align: center;
+    line-height: normal;
+    max-width: 90%;
+    padding-bottom: 2%;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    align-items: center; /*keeps text in line with pic*/
+    margin: 0px 0 4vw; /*how separated the rows are*/
+    padding-left: 20vw; /*100px moves logo pics away from left side some*/
+    padding-right: 5%;
+}
+
+.phone_logo, .email_logo, .address_logo{
+    margin-top: 4vh;/*;40px*/
+    margin-right: 2vw; /* Use margin-right to create space between icon and text */
+   /* margin-left: 2vw;50px*/
+   display: flex;
+   align-items: center;
+}
+
+.phone_logo img,
+.email_logo img,
+.address_logo img {
+    max-width: 100%; /* Make the logo images responsive */
+    height:auto;
+}
+
+.phone_number, .email, .address{
+    font-size: 2.5vw;/*75px;*/
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 1vh 1vw; /* 20px makes space between pic and info horizontal;*/
+    display: flex;
+    align-items: center;
+    /*margin-left or top: 2vw; 80px makes space between pic and info*/
+    white-space: nowrap;
+}
+
+.phone_number p, .email p, .address p{
+    font-family: "Helvetica Light", Cochin;
+}
+
+.contact .phone_number , .contact .email a, .contact .address  {
+    color: #036080; /* Change to your desired color */
+    text-decoration: none;
+    font-family: "Helvetica Light";
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1520px) {
+    .after_contact_container h1{
+        margin-top: 4vw;
+    }
+    .contact_name{
+        margin-top: 1vw; /*moves name down from contact details*/
+        margin-bottom: 5vw;
+    }
+    .row {
+        padding-left: 17vw;
+    }
+
+    .phone_number,
+    .email,
+    .address {
+        font-size: 4vw;
+        padding: 1vw 2vw;
+    }
+
+    .phone_logo,
+    .email_logo,
+    .address_logo {
+        margin-top: 1vw;
+    }
+
+    .phone_logo img,
+    .email_logo img,
+    .address_logo img {
+        max-width: 85px; /* Adjust size for smaller screens */
+    }
+}
+@media (max-width: 600px) {
+    .phone_logo img,
+    .email_logo img,
+    .address_logo img {
+        max-width: 40px; /* Adjust size for smaller screens */
+    }
+    .row {
+        padding-left: 15vw;
+    }
+}
+
+/*.footer_light_blue_container{
+    margin-top: 10vw; distance from qr code and arrow to footer
+    background: #DFEAF0;
+    height: 196px;
+    display: flex;
+}*/
+
+.light_blue_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+
+/*@media screen and (max-width: 1000px) {
+    .footer_light_blue_container{
+        margin-top: 5vw;
+        margin-bottom: -5vw;
+        height:20vw;
+    }
+    .special img{
+        width: 10%;
+    }
+}*/
+
+
+
+
+
+.hotline_resources{
+    background-color: #ffffff;
+    padding: 0px 0px; /*makes no white space after blue header*/
+}
+
+.Emergency_text_box{
+    position: absolute;
+    z-index: 1;
+    height: 11vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 5vw;
+    width: 100%;
+}
+
+.Emergency_text_box h1{
+   color: #F2AA8D;
+   font-size: 5.5vw; /*90px*/
+   letter-spacing: 2px;
+   font-weight: 500;
+   font-family: "Cochin", Regular;
+}
+
+.hotline_img--container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hotline_img--container img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 100vh
+}
+
+.rows{
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(223, 234, 240, 0.80) 0%, rgba(223, 234, 240, 0.00) 100%);display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.rect_1,.rect_2,.rect_3,.rect_4,.rect_5,.rect_6,.rect_7,.rect_8,.rect_9,
+.rect_1_num,.rect_2_num,.rect_3_num,.rect_4_num,.rect_5_num,.rect_6_num,.rect_7_num,.rect_8_num,.rect_9_num{
+    color: #036080;
+    font-size: 2.5vw; /*75px*/
+    margin-left: 11vw; /*why the words are centered left*/
+    text-align: left;
+    font-family: "Helvetica", Cochin;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+}
+
+.rect_1_num p,.rect_2_num p,.rect_3_num p,.rect_4_num p,.rect_5_num p,.rect_6_num p,.rect_7_num p,.rect_8_num p,.rect_9_num p{
+    font-family: "Helvetica Light", Cochin;
+}
+
+.Emergency_text_box_orange{ /*detox programs*/
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2AA8D;
+}
+
+.Emergency_text_box_orange h1{
+   color: #FFF;
+   font-size: 6vw;
+   font-family: "Cochin", Arial;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}  
+
+
+.row-orange{
+    width: 100%;
+    height: 250px; /* Set the desired height 450px*/
+    background: linear-gradient(180deg, rgba(236, 225, 214, 0.38) 0%, rgba(236, 225, 214, 0.00) 100%);display: flex;
+    flex-direction: column; /*name and under it is number*/
+    justify-content: center;
+}
+
+.rect_10,.rect_11,.rect_12,.rect_13,
+.rect_10_num,.rect_11_num,.rect_12_num,.rect_13_num{
+    color: #000;
+    font-size: 2.5vw;
+    margin-left: 11vw;/*180px*/
+    text-align: left;
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rect_10_num p,.rect_11_num p,.rect_12_num p,.rect_13_num p{
+    font-family: "Helvetica Light", Cochin;
+}
+
+@media (max-width: 968px) {
+    .Emergency_text_box{
+        height: 15vw;
+        margin-top: 9vw; /*moves emergency box down so purple in pic shown*/
+    }
+    .rows {
+        padding-left: 3%;
+        padding-right: 3%;
+        height: 22vw; /*row height*/
+    }
+
+    .rect_1,.rect_2,.rect_3,.rect_4,.rect_5,.rect_6,.rect_7,
+    .rect_1_num,.rect_2_num,.rect_3_num,.rect_4_num,.rect_5_num,.rect_6_num,.rect_7_num,
+    .rect_10,.rect_11,.rect_12,.rect_13,.rect_10_num,.rect_11_num,.rect_12_num,.rect_13_num{
+        font-size: 4.5vw;
+        /*margin-top: 2vh;*/
+        max-width: 100%; /* Adjust size for smaller screens */
+        white-space: nowrap;
+        line-height: normal; /* Adjust line-height for vertical centering */
+        margin-left: 10vw;
+        
+    }
+
+    .eight, .nine{
+        height: 25vw; /*row height*/
+    }
+
+    .rect_8,.rect_8_num, .rect_9,.rect_9_num{
+        display: grid;
+        margin-left: 10vw;
+        line-height: normal;
+        /*margin-top: 2vw;*/
+        font-size: 4.5vw;
+        max-width: 100%;
+    }
+    .row-orange{
+        height: 22vw;
+    }
+}
+  .black_link {
+    font-family: "Helvetica Light";
+    text-decoration: none; /* Remove underlines from links */
+    color: #000; /* Set the link color */
+  }
+
+.footer_orange_container{
+    margin-top: 0px; /*distance from footer*/
+    background: #F2AA8D;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center
+}
+.bb1{
+    background: #DFEAF0;
+}
+.bb{
+    background: #FFF;
+}
+
+.white_after_logo{
+    height: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+    .footer_orange_container{
+        margin-top: 0px; 
+        height: 13vw;
+    }
+    .footer_orange_container img{
+        width: 40%;
+    }
+    .white_after_logo{
+        height:8vw;
+    }
+}
+
+
+
+
+
+
+
+/*Hotline*/
+.container_extra_wide{ /*the designers picture*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: -12vw auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.container_extra_wide img{
+    width: 2400px; /*needed special to make picture wide enough 1920*/
+    height: auto; /* Allow the height to adjust proportionally */
+    transform: scaleY(0.9);
+    object-fit: cover;
+    max-width: 100%;
+    margin-bottom: -12.5vw;
+}
+
+.grey_box{ /*grey rows*/
+    background: linear-gradient(180deg, rgba(78, 109, 121, 0.39) 0%, rgba(223, 234, 240, 0.00) 100%);
+    }
+
+.grey{ /*the grey paragraph*/
+    color: #4E6D79;
+}
+
+.check_out_info_container{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 5%;
+    
+}
+
+.check_out_info_container h2{ /*checkout*/
+    color: #036080;
+    font-size: 3.5vw;
+    font-style: normal;
+    margin-left: 11vw;
+    font-family: "Helvetica Light", Arial; 
+    font-weight: 300;
+    line-height: normal;
+}
+
+.check_out_info_container p{ /* @hamptons text*/
+    color: #036080;
+    font-size: 2vw;
+    font-style: normal;
+    margin-left: 11vw;
+    font-family: "Helvetica Light", Arial; 
+    text-decoration: none;
+    font-weight: 300;
+    line-height: normal;
+    height: 10%;
+    margin-bottom: 5%;
+   
+}
+
+p a {
+    font-family: "Helvetica Light";
+    text-decoration: none; /* Remove underlines from links */
+    color:  #036080; /* Set the link color */
+  }
+  
+  /* Style the link on hover */
+  p a:hover {
+    text-decoration: none; /* Underline the link on hover */
+  }
+
+.arrow {
+    display: flex;
+    position: relative; /* Add positioning to the container relative */
+    left: 55vw;
+    bottom: 2vw; /*100px*/
+    /*left: 850px;
+    bottom: 20px; /*moves arrow down*/
+  }
+
+  .arrow img{
+    width: auto; /* Set your desired width 600px*/
+    height: 12vw; /* Set your desired height 300px 12vw*/
+  }
+
+  .qrcode_container {
+    display: flex;
+    position: relative;
+    bottom: 10vw;/*250px*/
+    left: 75%;
+  }
+  
+  .qrcode_container img {
+    width: auto;
+    height: 20vw;
+  }  
+  
+  .special_hamp{
+    background-color: #DFEAF0;
+  }
+  .hamp img{
+    width: 144px;
+    height: auto;
+    transform: none;
+    object-fit: cover;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 1000px){
+    .hamp img{
+        width: 40%;
+    }
+  }
+  
+    @media screen and (max-width: 768px) {
+        
+        .arrow img{
+            height: 14vw;
+        }
+        .qrcode_container {
+            padding-bottom: 100px;
+            padding-top: -100px;
+            margin-bottom: -100px; /*this controls how far away footer is from qrocde*/
+        }
+        .qrcode_container img {
+            bottom: -100px;
+        }
+        .check_out_info_container h2{
+            margin-bottom: 0%;
+        }
+    }
+
+
+
+
+
+    /*services*/
+
+    .container_with_gradient {
+        background: url(<path-to-image>), lightgray -0.125px 0px / 100.246% 119.927% no-repeat;
+        background-blend-mode: darken;
+    }
+    
+    .gradient-overlay {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(180deg, #036080 0%, rgba(3, 96, 128, 0.00) 100%);
+        pointer-events: none;
+    }
+    
+    .container_beach {
+        position: relative;
+        max-width: 100%; /* Ensure the image doesn't exceed its container */
+        width: 100%;
+        min-width: 300px; /* Set a minimum width to avoid getting too small on large screens */
+    }
+    
+    .container_beach img {
+        max-width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+    }
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0vw; /* Adjust as needed */
+        color: #FFF; /* Set the color of the text */
+        text-align: center;
+        margin-top: 18vw;
+    }
+    
+    .text-container p { /* paragraph on mental health */
+        font-family: "Helvetica";
+        font-size: 3vw; /* Adjust the font size as needed */
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 6vw;
+        margin-top: 0%;
+    }
+    
+    .text-container .p2 { /* Matt Haig */
+        font-family: "Helvetica Light Oblique";
+        font-size: 3vw; /* Adjust the font size as needed */
+        font-style: italic;
+        font-weight: 300;
+        line-height: 0%;
+    }
+
+    .services_orange{ /*orange box with nothing in it*/
+        color: #F2AA8D;
+        opacity: .2;
+        height: 128px;
+    }
+
+    .services_offered{
+        background-color: #FFFFFF;
+        height: 20vw;
+    }
+
+    .services_offered h1{
+        color: #036080;
+        font-family: "Cochin", Arial;
+        font-size: 6vw; /*150px*/
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .offered_row_list{
+        display: flex;
+        background-color: #DFEAF0;
+        /*justify-content: space-between;*/
+        align-items: center; /*keeps text in line with pic*/
+        padding: 30px 100px; /*seperates word rows and moves away from left side some*/
+    }
+
+    .row1 p,.row2 p,.row3 p,.row4 p,.row5 p,.row6 p{
+        color: #036080;
+        margin-left: 5vw;
+        font-size: 4vw; /*100px*/
+        text-align: left;
+        font-family: "Helvetica Light", Cochin;
+        font-weight: 300;
+        line-height: normal; /*adjust space between lines*/
+        font-style: normal;
+    }
+    p.slanted{
+        font-family: "Helvetica Light Oblique";
+    }
+
+
+    @media screen and (max-width:850px) {
+        .text-container{
+            margin-top: 21vw;
+        }
+        .text-container p{
+            font-size: 3vw;
+        }
+        .services_orange{
+            height: 10vh;
+        }
+        .services_offered{
+            height: 20vh;
+        }
+        .services_offered h1{
+            font-size: 6vw;
+        }
+        .row6{
+            margin-bottom: -40vw;
+        }
+        .row1,.row2,.row3,.row4,.row5,.row6{
+        margin-left: -20px;
+        font-size: 5vw;
+        }
+    }
+  @media screen and (max-width:850px) {
+       .row1,.row2,.row3,.row4,.row5,.row6{
+           font-size: 5vw;
+       }
+      .offered_row_list{
+          padding: 2.5% 10%;
+      }
+  }
+
+    .row1{
+        padding-top: 11%; /*180px*/
+    }
+    .row6{
+        margin-bottom: 10vw; /*250px*/
+    }
+
+    .serve{
+        background-color: #FFFFFF;
+        margin-top: 0%;
+    }
+    
+    
+
+
+
+
+
+    /*home*/
+    .main_page_img img {
+        margin-top: -12vw; /* Crops top of image -12.5 */
+        transform: scaleY(0.8); /* Initial scale */
+    
+        /* Media query for smaller screens */
+        /* Media query for smaller screens */
+        @media screen and (max-width: 76px) {
+            transform: scaleY(1.2); /* Make the image bigger for smaller screens */
+        }
+    
+        /* Media query for even smaller screens */
+        @media screen and (max-width: 48px) {
+            transform: scaleY(1.5); /* Make the image even bigger for even smaller screens */
+        }
+    }
+    .NP{
+        position: absolute;
+        display: flex;
+        margin-top:5%;/*140px*/
+        margin-left: 11vw;
+    }
+
+    .NP h1{ /*NP psych on top of pic*/
+        color: #036080;   
+        font-family: Cochin;
+        font-size: 5.5vw; /*150px*/
+    }
+
+    h1{
+        font-weight: normal;
+    }
+
+    .contact_content {
+        text-align: center;
+    }
+    
+    .main_page_img img{
+        margin-bottom: 3%;
+    }
+    
+    .home_intro h1,
+    .client_name p,
+    .client_des p {
+        color: #036080;
+        margin-left: 11vw;
+    }
+
+    .home_intro h1{ /*nice to meet you*/
+        font-family: "Helvetica Light";
+        font-size: 4.4vw;
+        padding-bottom: 3%;
+    }
+    
+    .client_name p {
+        font-family: "Helvetica";
+        font-size: 2.2vw;
+    }
+    
+    .client_des p {
+        font-family: "Helvetica Light Oblique";
+        font-size: 2.2vw;
+        font-style: normal;
+    }
+    
+
+    .paragraphs {
+        margin-left: 11vw;
+        padding-top: 4.5%;
+    }
+    
+    .paragraphs e1,
+    .paragraphs e2,
+    .paragraphs e3,
+    .paragraphs e4,
+    .paragraphs e5 {
+        color: #000;
+        font-family: "Helvetica Light Oblique";
+        font-style: normal;
+        font-size: 1.8vw;
+    }
+
+    .client_image_container{
+        height: 0vh;
+    }
+    
+    .client_circle { /*the circle*/
+        background-image: url(<path-to-image>);
+        background-color: #ECE1D6;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: 450px; /* Adjust the width to your desired dimensions */
+        height: 450px;
+        border-radius: 50%; /* Create a circular clipping effect */
+        overflow: hidden;
+        position: relative; /* Change to relative for normal document flow */
+        margin-top: -10%; /* Adjust margin as needed -100*/
+        margin-right: 10%; /* Center the container horizontally */
+        margin-left: auto; /* Center the container horizontally */
+        transition: all 0.3s;
+    }
+    
+    .client_image_container img {
+        width: 100%; /* Make the image responsive */
+        margin-top: 10%;
+        height: auto;
+        transform: scaleY(1);
+    }
+
+    
+    @media screen and (max-width: 1800px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.7vw;
+        }
+
+        .client_circle { /*the circle*/
+            margin-top: -10%;
+            width: 350px; /* Adjust the width to your desired dimensions */
+            height: 350px;
+        }
+    }
+ 
+@media screen and (max-width: 1300px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.6vw;
+        }
+
+        .client_circle { /*the circle*/
+            width: 300px; /* Adjust the width to your desired dimensions */
+            height: 300px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) { /*still horizontal here*/
+
+        .paragraphs e1,
+        .paragraphs e2,
+        .paragraphs e3,
+        .paragraphs e4,
+        .paragraphs e5 {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.8vw;
+        }
+
+        .client_circle { /*the circle*/
+            margin-top: -10%;
+            width: 30vw; /* Adjust the width to your desired dimensions */
+            height: 30vw;
+        }
+    }
+
+    @media screen and (max-width: 600px) { /*still horizontal here*/
+        .client_circle { /*the circle*/
+            margin-top: -12%;
+            width: 28vw; /* Adjust the width to your desired dimensions */
+            height: 28vw;
+        }
+
+        .paragraphs {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.7vw;
+        }
+    }
+        @media screen and (max-width: 450px) { /*still horizontal here*/
+
+        .paragraphs {
+            line-height: normal;
+            font-family: "Helvetica Light Oblique";
+            font-size: 1.5vw;
+        }
+    }
+
+    .initial {
+        margin: 0;
+    }
+    
+    .hidden {
+        display: none;
+        margin: 0;
+        padding-bottom: 1%;
+    }
+    
+    .read-more-button {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-top: .2%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: blue; /* Adjust color as needed */
+        padding-bottom: 1%;
+    }
+
+    .read-more-button img{
+        width:4vw;
+    }
+
+    .hiddenPic {
+        padding-right: 1vw;
+        position: absolute; /* Change to relative for normal document flow */
+        left: 60vw;
+        bottom: 5%;
+    }
+
+    .hiddenPic img{ /*the sliding animation*/
+        max-width: 100%;
+        width: 500px; /* Make the image responsive */
+        opacity: 1;
+        position: relative;
+        border-radius: 60px;
+    }
+
+
+    @media screen and (max-width: 1000px) {
+        .hiddenPic img{
+            display: none; /* Hide the .hiddenPic at this screen width */
+        }
+    }
+
+    .AI{ /*accepted insurances*/
+        position: relative;
+        margin-top: 6.5%;
+        margin-bottom: 0px;
+        background-color: #B5D0E0;
+        height: 20vw;
+    }
+
+    .AI h1{
+        font-size: 5vw;
+        color: #036080;
+    }
+
+    .logo-container {
+        max-width: 100%;
+        padding-top: 5%; /*dont know why but very important*/
+        padding-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%; /* Adjust the height as needed 100vh*/
+        margin-bottom: 0px;
+        justify-content: space-evenly;
+      }
+      
+      .top-logos{
+        margin-top: 0%;
+      }
+      .top-logos,
+      .bottom-logos {
+        display: flex;
+        width: 100%;
+        height:10%;
+        justify-content: center;
+      }
+      
+      .IC1,
+      .IC2,
+      .IC3,
+      .IC4,
+      .IC5,
+      .IC6 {
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        margin: 2vw 6vw; /*20px seperates each element*/
+        height: 10%;
+      }
+
+      .IC3 img{
+        width:80px;/*90px*/
+        height: auto;
+      }
+      .IC1 img,
+      .IC2 img,
+      .IC4 img,
+      .IC5 img,
+      .IC6 img{
+        width:160px; /*100px*/
+        height: auto;
+        padding-bottom: 0%;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .logo-container{
+            padding-top: 4%;
+            padding-bottom:4%;
+        }
+        .IC3 img{
+            width:60px;/*90px*/
+            height: auto;
+          }
+          .IC1 img,
+          .IC2 img,
+          .IC4 img,
+          .IC5 img,
+          .IC6 img{
+            width:100px; /*100px*/
+            height: auto;
+          }
+      }
+
+      @media screen and (max-width: 700px) {
+        .logo-container{
+            padding-top: 7%;
+            padding-bottom:7%;
+        }
+        .IC1,
+      .IC2,
+      .IC3,
+      .IC4,
+      .IC5,
+      .IC6 {
+        margin: 1vw 4vw; /*20px seperates each element*/
+      }
+        .IC3 img{
+            width:40px;/*90px*/
+            height: auto;
+          }
+          .IC1 img,
+          .IC2 img,
+          .IC4 img,
+          .IC5 img,
+          .IC6 img{
+            width:80px; /*100px*/
+            height: auto;
+          }
+      }
