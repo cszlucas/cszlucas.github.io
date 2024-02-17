@@ -30,7 +30,7 @@
 .navbar { /*top bar (color, size, layout, where words are put in box
     ,size of words classified as part of navbar section, ability to slide) */
     background: #036080;
-    height:180px;
+    height:7vw; /*180px*/
     display: flex;
     position: sticky; /*allows bar to remain visible when scrolling sticky*/
     top:0;
@@ -40,19 +40,35 @@
     z-index: 999; /*ensures overlap priority*/
 }
 
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+   max-width:60%; 
+   height: auto;
+}
+
 @media screen and (max-width: 1000px) {
     .navbar{
-        height: 12vw;
+        height: 10vw;
     }
-    .logo{
+    /* .logo{
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+    }*/
     .logo img{
-       width:40%; 
+       width:50%; 
        height: auto;
-    }
+    } 
+}
+
+@media screen and (max-width:700px){
+    .logo img{
+        width:40%; 
+     } 
 }
 
 .navbar__container { 
@@ -115,14 +131,24 @@
     padding-top: 0vw;
 }
 
-.navbar__toggle .bar{ /*the hammer bars 3 by 25*/ 
+.navbar__toggle .bar{ /*the hamburger bars 3 by 25*/ 
+    display: block;
+    /* align-content: center; */
+    width: 4vw;/*40px*/
+    height: .3vw; /*height of lines*/
+    margin: .2vw 2.5vw;/*0px 60px*/
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    margin-bottom: 10%; /*spreads out line height between bars*/
+}
+/* .navbar__toggle .bar{ /*the hammer bars 3 by 25
     width: 85px;
     height: 4px;
     margin: 15px 60px;
     transition: all 0.3s ease-in-out;
     background: #fff;
-    margin-bottom: 10px; /*spreads out line height between bars*/
-}
+    margin-bottom: 10px; /*spreads out line height between bars
+} */
 
 .navbar__links{
     height: 122px;
@@ -198,7 +224,7 @@
         flex-direction: inline;
         justify-content: center;
         align-items: center;
-        gap: 2vw; /*seperates column of words gap vertical*/
+        gap: 2vw; /*separates column of words gap vertical*/
         width: 70%; /* Use a percentage value for responsiveness */
         max-width: 700px; /* Set a maximum width for larger screens */
         position: absolute;
@@ -258,11 +284,11 @@
 
 @media screen and (max-width: 1000px) {
     .navbar__toggle .bar{ /*the hamburger bars 3 by 25*/ 
-        display: flex;
-        align-content: center;
-        width: 40px;
-        height: 2px;
-        margin: 0px 60px;
+        display: block;
+        /* align-content: center; */
+        width: 7vw;/*40px*/
+        height: .5vw;
+        margin: .3vw 10vw;/*0px 60px*/
         transition: all 0.3s ease-in-out;
         background: #fff;
         margin-bottom: 5%; /*spreads out line height between bars*/
@@ -599,7 +625,7 @@
 }
 
 .Emergency_text_box_orange{ /*detox programs*/
-    height: 20vw;
+    height: 15vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -608,7 +634,7 @@
 
 .Emergency_text_box_orange h1{
    color: #FFF;
-   font-size: 6vw;
+   font-size: 5vw;
    font-family: "Cochin", Arial;
    font-style: normal;
    font-weight: 500;
@@ -642,8 +668,11 @@
 
 @media (max-width: 968px) {
     .Emergency_text_box{
-        height: 15vw;
+        height: 20vw;
         margin-top: 9vw; /*moves emergency box down so purple in pic shown*/
+    }
+    .Emergency_text_box_orange{
+        height: 25vw;
     }
     .rows {
         padding-left: 3%;
@@ -688,7 +717,7 @@
 .footer_orange_container{
     margin-top: 0px; /*distance from footer*/
     background: #F2AA8D;
-    height: 180px;
+    height: 8vw;/*180px*/
     display: flex;
     align-items: center;
     text-align: center;
@@ -828,7 +857,7 @@ p a {
     background-color: #DFEAF0;
   }
   .hamp img{
-    width: 144px;
+    width: 6vw;/*144px*/
     height: auto;
     transform: none;
     object-fit: cover;
@@ -1076,6 +1105,7 @@ p a {
     .client_name p {
         font-family: "Helvetica";
         font-size: 2.2vw;
+        line-height: 1.6;
     }
     
     .client_des p {
@@ -1090,15 +1120,12 @@ p a {
         padding-top: 4.5%;
     }
     
-    .paragraphs e1,
-    .paragraphs e2,
-    .paragraphs e3,
-    .paragraphs e4,
-    .paragraphs e5 {
+    .paragraphs p {
         color: #000;
         font-family: "Helvetica Light Oblique";
         font-style: normal;
         font-size: 1.8vw;
+        line-height: 1.6;
     }
 
     .client_image_container{
@@ -1133,7 +1160,7 @@ p a {
     
     @media screen and (max-width: 1800px) { /*still horizontal here*/
 
-        .paragraphs e1,
+        /* .paragraphs e1,
         .paragraphs e2,
         .paragraphs e3,
         .paragraphs e4,
@@ -1141,7 +1168,7 @@ p a {
             line-height: normal;
             font-family: "Helvetica Light Oblique";
             font-size: 1.7vw;
-        }
+        } */
 
         .client_circle { /*the circle*/
             margin-top: -10%;
@@ -1152,7 +1179,7 @@ p a {
  
 @media screen and (max-width: 1300px) { /*still horizontal here*/
 
-        .paragraphs e1,
+        /* .paragraphs e1,
         .paragraphs e2,
         .paragraphs e3,
         .paragraphs e4,
@@ -1160,7 +1187,7 @@ p a {
             line-height: normal;
             font-family: "Helvetica Light Oblique";
             font-size: 1.6vw;
-        }
+        } */
 
         .client_circle { /*the circle*/
             width: 300px; /* Adjust the width to your desired dimensions */
@@ -1170,7 +1197,7 @@ p a {
 
     @media screen and (max-width: 1000px) { /*still horizontal here*/
 
-        .paragraphs e1,
+        /* .paragraphs e1,
         .paragraphs e2,
         .paragraphs e3,
         .paragraphs e4,
@@ -1178,7 +1205,7 @@ p a {
             line-height: normal;
             font-family: "Helvetica Light Oblique";
             font-size: 1.8vw;
-        }
+        } */
 
         .client_circle { /*the circle*/
             margin-top: -10%;
@@ -1221,18 +1248,20 @@ p a {
     
     .read-more-button {
         display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        margin-top: .2%;
+        /* justify-content: flex-start; */
+        align-items: flex-end; 
+        /* margin-top: 1; */
         background: none;
         border: none;
         cursor: pointer;
-        color: blue; /* Adjust color as needed */
-        padding-bottom: 1%;
+        /* color: blue; /* Adjust color as needed */
+        padding-top: 4.5vw; 
+        margin-left: 11vw;
     }
 
     .read-more-button img{
         width:4vw;
+        /* margin-top: -100px; */
     }
 
     .hiddenPic {
@@ -1254,6 +1283,9 @@ p a {
     @media screen and (max-width: 1000px) {
         .hiddenPic img{
             display: none; /* Hide the .hiddenPic at this screen width */
+        }
+        .read-more-button{
+            padding-top: 2.5vw; 
         }
     }
 
